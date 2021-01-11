@@ -7,9 +7,7 @@ It is a general purpose JavaScript/TypeScript library that can help developers c
 - [For developers reading this in GitHub](https://gitlab.com/ii887522/hydro#for-developers-reading-this-in-github)
 - [Prerequisites](https://gitlab.com/ii887522/hydro#prerequisites)
 - [Build custom-node docker image](https://gitlab.com/ii887522/hydro#build-custom-node-docker-image)
-- [Install dependencies](https://gitlab.com/ii887522/hydro#install-dependencies)
-- [Build project](https://gitlab.com/ii887522/hydro#build-project)
-- [Test project](https://gitlab.com/ii887522/hydro#test-project)
+- [Install dependencies, build and test project](https://gitlab.com/ii887522/hydro#install-dependencies-build-and-test-project)
 - [Deploy project](https://gitlab.com/ii887522/hydro#deploy-project)
 
 ## For developers reading this in GitHub
@@ -32,17 +30,7 @@ build
 cd ..
 ```
 
-## Install dependencies
-```sh
-install
-```
-
-## Build project
-```sh
-build
-```
-
-## Test project
+## Install dependencies, build and test project
 ```sh
 test
 ```
