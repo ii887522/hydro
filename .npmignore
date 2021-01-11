@@ -1,0 +1,11 @@
+.github
+.gitlab
+.vscode
+custom-node
+test
+.editorconfig
+.gitignore
+*.cmd
+*.sh
+CODE_OF_CONDUCT.md
+tsconfig.*

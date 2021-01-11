@@ -1,0 +1,33 @@
+{
+  "name": "@ii887522/hydro",
+  "version": "1.0.0",
+  "description": "It is a general purpose JavaScript/TypeScript library that can help developers create various kinds of application in no time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-standard && node test/index.test.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ii887522/hydro.git"
+  },
+  "keywords": [
+    "hydro"
+  ],
+  "author": "ii887522",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/ii887522/hydro/issues"
+  },
+  "homepage": "https://gitlab.com/ii887522/hydro#readme",
+  "ts-standard": {
+    "ignore": [
+      "test/index.test.js",
+      "index.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.20",
+    "ts-standard": "^10.0.0"
+  }
+}
