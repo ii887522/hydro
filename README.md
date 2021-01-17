@@ -15,7 +15,7 @@ It is a general purpose JavaScript/TypeScript library that can help developers c
 Please go to https://gitlab.com/ii887522/hydro to start contributing instead.
 
 ## Coding Style
-This project follows [Javascript Standard Style](https://standardjs.com/). Please familiarize yourself with the rules provided in the coding style and 
+This project follows [Javascript Standard Style](https://standardjs.com/). Please familiarize yourself with the rules provided in the coding style and
 make sure all the proposed code changes in your commits are conforming to the style before making a merge request. You can also make use of
 StandardJS - Javascript Standard Style which is a [Visual Studio Code](https://code.visualstudio.com/) plugin and `test` command under the
 [Install dependencies, build and test project](https://gitlab.com/ii887522/hydro#install-dependencies-build-and-test-project) section to support you.
@@ -31,18 +31,43 @@ StandardJS - Javascript Standard Style which is a [Visual Studio Code](https://c
   - YAML
 
 ## Build custom-node docker image
+
+### For Windows:
 ```sh
 cd custom-node
 build
 cd ..
 ```
 
+### For Linux:
+```sh
+cd custom-node
+sh build.sh
+cd ..
+```
+<br/>
+
 ## Install dependencies, build and test project
+
+### For Windows:
 ```sh
 test
 ```
 
+### For Linux:
+``` sh
+sh test.sh
+```
+<br/>
+
 ## Deploy project
+
+### For Windows:
 ```sh
 deploy
+```
+
+### For Linux:
+```sh
+sh deploy.sh
 ```
