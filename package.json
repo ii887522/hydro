@@ -27,7 +27,7 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^14.14.20",
+    "@types/node": "^14.14.21",
     "ts-standard": "^10.0.0"
   }
 }
