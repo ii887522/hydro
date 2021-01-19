@@ -9,7 +9,7 @@
 This project follows [Javascript Standard Style](https://standardjs.com/). Please familiarize yourself with the rules provided in the coding style and
 make sure all the proposed code changes in your commits are conforming to the style before making a merge request. You can also make use of
 StandardJS - Javascript Standard Style which is a [Visual Studio Code](https://code.visualstudio.com/) plugin and `test` command under the
-[Install dependencies, build and test project](https://gitlab.com/ii887522/hydro#install-dependencies-build-and-test-project) section to support you.
+[Install dependencies, build and test project](https://gitlab.com/ii887522/hydro/-/blob/master/CONTRIBUTING.md#install-dependencies-build-and-test-project) section to support you.
 
 ## Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) using Linux containers
