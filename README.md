@@ -5,69 +5,48 @@ It is a general purpose JavaScript/TypeScript library that can help developers c
 
 ## Table of Contents
 - [For developers reading this in GitHub](https://gitlab.com/ii887522/hydro#for-developers-reading-this-in-github)
-- [Coding Style](https://gitlab.com/ii887522/hydro#coding-style)
-- [Prerequisites](https://gitlab.com/ii887522/hydro#prerequisites)
-- [Build custom-node docker image](https://gitlab.com/ii887522/hydro#build-custom-node-docker-image)
-- [Install dependencies, build and test project](https://gitlab.com/ii887522/hydro#install-dependencies-build-and-test-project)
-- [Deploy project](https://gitlab.com/ii887522/hydro#deploy-project)
+- [Contributing](https://gitlab.com/ii887522/hydro#contributing)
+- [References](https://gitlab.com/ii887522/hydro#references)
 
 ## For developers reading this in GitHub
 Please go to https://gitlab.com/ii887522/hydro to start contributing instead.
 
-## Coding Style
-This project follows [Javascript Standard Style](https://standardjs.com/). Please familiarize yourself with the rules provided in the coding style and
-make sure all the proposed code changes in your commits are conforming to the style before making a merge request. You can also make use of
-StandardJS - Javascript Standard Style which is a [Visual Studio Code](https://code.visualstudio.com/) plugin and `test` command under the
-[Install dependencies, build and test project](https://gitlab.com/ii887522/hydro#install-dependencies-build-and-test-project) section to support you.
+## Contributing
+Please go to https://gitlab.com/ii887522/hydro/-/blob/master/CONTRIBUTING.md to get some information about contributing to hydro.
 
-## Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) using Linux containers
-- [Visual Studio Code](https://code.visualstudio.com/)
-  - Docker
-  - EditorConfig for VS Code
-  - Markdown All in One
-  - Remote - WSL
-  - StandardJS - Javascript Standard Style
-  - YAML
+## References
 
-## Build custom-node docker image
-
-### For Windows:
-```sh
-cd custom-node
-build
-cd ..
+### **consume**
+```ts
+function consume (_: any): void
 ```
-
-### For Linux:
-```sh
-cd custom-node
-sh build.sh
-cd ..
+It simply consumes any object passed in and do nothing for it and return immediately.
+#### **Example usage:**
+```ts
+consume(0)
 ```
-<br/>
+<br />
 
-## Install dependencies, build and test project
-
-### For Windows:
-```sh
-test
+### **emptyDir**
+```ts
+async function emptyDir (dirPath: string): Promise<void>
 ```
+It removes all the files and subdirectories in directory passed in as its path.
 
-### For Linux:
-``` sh
-sh test.sh
+`dirPath`: it must ends with /
+#### **Example usage:**
+```ts
+emptyDir('path/to/dir/')
 ```
-<br/>
+<br />
 
-## Deploy project
-
-### For Windows:
-```sh
-deploy
+### **getFileName**
+```ts
+function getFileName (path: string): string
 ```
-
-### For Linux:
-```sh
-sh deploy.sh
+It returns the file name with extension name if exists from the path given.
+#### **Example usage:**
+```ts
+assert(getFileName('SDL2-2.0.12/lib/x86/SDL2.dll') === 'SDL2.dll')
 ```
+<br />
