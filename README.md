@@ -58,6 +58,6 @@ function substring(from: string, startText: string, endText: string): string
 It returns a substring from the original string based on the start and end text of the substring excluding end text.
 #### **Example usage:**
 ```ts
-
+assert(substring('SDL2_image-2.0.5/lib/x86/libpng16-16.dll', 'image', '.dll') === 'image-2.0.5/lib/x86/libpng16-16')
 ```
 <br />
