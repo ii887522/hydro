@@ -15,3 +15,7 @@ export async function emptyDir(dirPath) {
 export function getFileName(path) {
     return path.substring(path.lastIndexOf('/') + 1);
 }
+export function substring(from, startText, endText) {
+    const startTextIndex = from.indexOf(startText);
+    return from.substring(startTextIndex, from.indexOf(endText, startTextIndex));
+}

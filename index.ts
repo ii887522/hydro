@@ -28,3 +28,13 @@ export async function emptyDir (dirPath: string): Promise<void> {
 export function getFileName (path: string): string {
   return path.substring(path.lastIndexOf('/') + 1)
 }
+
+/**
+ * It returns a substring from the original string based on the start and end text of the substring excluding end text.
+ * @param startText the start text of the substring
+ * @param endText until the end text of the substring excluding itself
+ */
+export function substring (from: string, startText: string, endText: string): string {
+  const startTextIndex = from.indexOf(startText)
+  return from.substring(startTextIndex, from.indexOf(endText, startTextIndex))
+}

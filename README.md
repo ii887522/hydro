@@ -50,3 +50,14 @@ It returns the file name with extension name if exists from the path given.
 assert(getFileName('SDL2-2.0.12/lib/x86/SDL2.dll') === 'SDL2.dll')
 ```
 <br />
+
+### **substring**
+```ts
+function substring(from: string, startText: string, endText: string): string
+```
+It returns a substring from the original string based on the start and end text of the substring excluding end text.
+#### **Example usage:**
+```ts
+assert(substring('SDL2_image-2.0.5/lib/x86/libpng16-16.dll', 'image', '.dll') === 'image-2.0.5/lib/x86/libpng16-16')
+```
+<br />
