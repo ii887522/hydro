@@ -1,6 +1,9 @@
 'use strict'
 
 import { rmdir, mkdir } from 'fs'
+import DynamicUint8Array from './src/DynamicUint8Array.js'
+
+export { DynamicUint8Array }
 
 /**
  * It simply consumes any object passed in and do nothing for it and return immediately.
@@ -37,4 +40,15 @@ export function getFileName (path: string): string {
 export function substring (from: string, startText: string, endText: string): string {
   const startTextIndex = from.indexOf(startText)
   return from.substring(startTextIndex, from.indexOf(endText, startTextIndex))
+}
+
+/**
+ * It checks whether both arrays passed in are exactly the same.
+ */
+export function equal (l: Uint8Array, r: Uint8Array): boolean {
+  if (l.length !== r.length) return false
+  for (let i = 0; i !== l.length; ++i) {
+    if (l[i] !== r[i]) return false
+  }
+  return true
 }
