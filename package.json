@@ -9,7 +9,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/ii887522/hydro.git"
+    "url": "git+https://github.com/ii887522/hydro.git"
   },
   "keywords": [
     "hydro"
@@ -17,16 +17,16 @@
   "author": "ii887522",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/ii887522/hydro/issues"
+    "url": "https://github.com/ii887522/hydro/issues"
   },
-  "homepage": "https://gitlab.com/ii887522/hydro#readme",
+  "homepage": "https://github.com/ii887522/hydro",
   "ts-standard": {
     "ignore": [
       "**/*.js"
     ]
   },
   "devDependencies": {
-    "@types/node": "^15.0.1",
+    "@types/node": "^15.6.1",
     "ts-standard": "^10.0.0"
   }
 }

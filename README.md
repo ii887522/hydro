@@ -4,15 +4,11 @@
 It is a general purpose JavaScript/TypeScript library that can help developers create various kinds of application in no time.
 
 ## Table of Contents
-- [For developers reading this in GitHub](https://gitlab.com/ii887522/hydro#for-developers-reading-this-in-github)
-- [Contributing](https://gitlab.com/ii887522/hydro#contributing)
-- [References](https://gitlab.com/ii887522/hydro#references)
-
-## For developers reading this in GitHub
-Please go to https://gitlab.com/ii887522/hydro to start contributing instead.
+- [Contributing](https://github.com/ii887522/hydro#contributing)
+- [References](https://github.com/ii887522/hydro#references)
 
 ## Contributing
-Please go to https://gitlab.com/ii887522/hydro/-/blob/master/CONTRIBUTING.md to get some information about contributing to hydro.
+Please go to https://github.com/ii887522/hydro/blob/master/CONTRIBUTING.md to get some information about contributing to hydro.
 
 ## References
 
