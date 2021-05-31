@@ -38,8 +38,8 @@ export function getFileName (path: string): string {
  * @param endText until the end text of the substring excluding itself
  */
 export function substring (from: string, startText: string, endText: string): string {
-  const startTextIndex = from.indexOf(startText)
-  return from.substring(startTextIndex, from.indexOf(endText, startTextIndex))
+  const startTextI = from.indexOf(startText)
+  return from.substring(startTextI, from.indexOf(endText, startTextI))
 }
 
 /**
