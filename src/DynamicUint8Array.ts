@@ -23,7 +23,8 @@ export default class DynamicUint8Array {
    * It appends array elements passed in to itself.
    */
   add (array: ArrayLike<number>): void {
-    if (this.size + array.length > this.currentData.length) this.grow(Math.floor((this.size + array.length) * 1.33))
+    const growthFactor = 1.33
+    if (this.size + array.length > this.currentData.length) this.grow(Math.floor((this.size + array.length) * growthFactor))
     this.currentData.set(array, this.size)
     this.size += array.length
   }
