@@ -7,3 +7,4 @@ test
 *.sh
 CODE_OF_CONDUCT.md
 tsconfig.*
+coverage
