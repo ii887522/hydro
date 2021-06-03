@@ -4,7 +4,7 @@
   "description": "It is a general purpose JavaScript/TypeScript library that can help developers create various kinds of application in no time.",
   "main": "index.js",
   "scripts": {
-    "test": "ts-standard && node test/index.test.js"
+    "test": "ts-standard && cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "type": "module",
   "repository": {
@@ -26,7 +26,14 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^15.6.1",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.9.0",
+    "babel-jest": "^27.0.2",
+    "cross-env": "^7.0.3",
+    "jest": "^27.0.4",
     "ts-standard": "^10.0.0"
   }
 }
