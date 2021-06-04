@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+    branches: [master, develop]
+
+env:
+  checkout-version: v2
+  setup-node-version: v2
+  cache-version: v2
+  node-version: '15.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@${{ env.checkout-version }}
+      - name: Use Node.js
+        uses: actions/setup-node@${{ env.setup-node-version }}
+        with:
+          node-version: ${{ env.node-version }}
+      - name: Cache Project
+        id: cache
+        uses: actions/cache@${{ env.cache-version }}
+        with:
+          path: |
+            ~/.npm
+            *.js
+            src/**/*.js
+            test/**/*.js
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Install Typescript
+        run: npm install -g typescript
+      - run: npx tsc
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@${{ env.checkout-version }}
+      - name: Use Node.js
+        uses: actions/setup-node@${{ env.setup-node-version }}
+        with:
+          node-version: ${{ env.node-version }}
+      - name: Cache Project
+        id: cache
+        uses: actions/cache@${{ env.cache-version }}
+        with:
+          path: |
+            ~/.npm
+            *.js
+            src/**/*.js
+            test/**/*.js
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - run: npm test
+    needs: build
+  deploy:
+    if: github.base_ref == 'master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@${{ env.checkout-version }}
+      - name: Use Node.js
+        uses: actions/setup-node@${{ env.setup-node-version }}
+        with:
+          node-version: ${{ env.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - name: Cache Project
+        id: cache
+        uses: actions/cache@${{ env.cache-version }}
+        with:
+          path: |
+            ~/.npm
+            *.js
+            src/**/*.js
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    needs: test
