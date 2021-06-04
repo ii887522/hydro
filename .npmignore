@@ -8,3 +8,5 @@ test
 CODE_OF_CONDUCT.md
 tsconfig.*
 coverage
+.github
+*.config.*js
