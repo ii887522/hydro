@@ -97,6 +97,7 @@ jobs:
           path: |
             *.js
             src/**/*.js
+            test/**/*.js
           key: ${{ runner.OS }}-node-${{ hashFiles('*.js', 'src/**/*.js', 'test/**/*.js') }}
       - name: Install dependencies
         run: npm ci
