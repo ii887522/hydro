@@ -36,6 +36,20 @@ emptyDir('path/to/dir/')
 ```
 <br />
 
+### **removeFiles**
+```ts
+async function removeFiles (extensionName: string, dirPath: string): Promise<void>
+```
+It removes all files in the directory passed in as its path with matching extension name passed in.
+
+`extensionName`: it must not starts with '.'<br />
+`dirPath`: it must ends with /
+#### **Example usage:**
+```ts
+removeFiles('dll', 'path/to/dir/')
+```
+<br />
+
 ### **getFileName**
 ```ts
 function getFileName (path: string): string
