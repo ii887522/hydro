@@ -1,5 +1,5 @@
 'use strict';
-import { rmdir, mkdir } from 'fs';
+import { rmdir, mkdir, readdir, rm } from 'fs';
 import DynamicUint8Array from './src/DynamicUint8Array.js';
 export { DynamicUint8Array };
 export function consume(_) { }
@@ -11,6 +11,29 @@ export async function emptyDir(dirPath) {
                     reject(err);
                 resolve();
             });
+        });
+    });
+}
+export async function removeFiles(extensionName, dirPath) {
+    return await new Promise((resolve, reject) => {
+        readdir(dirPath, (err, filePaths) => {
+            if (err !== null)
+                reject(err);
+            let pendingEntryCount = 0;
+            for (const filePath of filePaths) {
+                if (filePath.endsWith(`.${extensionName}`))
+                    ++pendingEntryCount;
+            }
+            for (const filePath of filePaths) {
+                if (filePath.endsWith(`.${extensionName}`)) {
+                    rm(`${dirPath}${filePath}`, err => {
+                        if (err !== null)
+                            reject(err);
+                        if (--pendingEntryCount === 0)
+                            resolve();
+                    });
+                }
+            }
         });
     });
 }
