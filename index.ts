@@ -1,6 +1,6 @@
 'use strict'
 
-import { rmdir, mkdir } from 'fs'
+import { rmdir, mkdir, readdir, rm } from 'fs'
 import DynamicUint8Array from './src/DynamicUint8Array.js'
 
 export { DynamicUint8Array }
@@ -11,7 +11,7 @@ export { DynamicUint8Array }
 export function consume (_: any): void { }
 
 /**
- * It removes all the files and subdirectories in directory passed in as its path.
+ * It removes all the files and subdirectories in the directory passed in as its path.
  * @param dirPath it must ends with /
  */
 export async function emptyDir (dirPath: string): Promise<void> {
@@ -21,6 +21,31 @@ export async function emptyDir (dirPath: string): Promise<void> {
         if (err !== null) reject(err)
         resolve()
       })
+    })
+  })
+}
+
+/**
+ * It removes all files in the directory passed in as its path with matching extension name passed in.
+ * @param extensionName it must not starts with '.'
+ * @param dirPath it must ends with /
+ */
+export async function removeFiles (extensionName: string, dirPath: string): Promise<void> {
+  return await new Promise((resolve, reject) => {
+    readdir(dirPath, (err, filePaths) => {
+      if (err !== null) reject(err)
+      let pendingEntryCount = 0
+      for (const filePath of filePaths) {
+        if (filePath.endsWith(`.${extensionName}`)) ++pendingEntryCount
+      }
+      for (const filePath of filePaths) {
+        if (filePath.endsWith(`.${extensionName}`)) {
+          rm(`${dirPath}${filePath}`, err => {
+            if (err !== null) reject(err)
+            if (--pendingEntryCount === 0) resolve()
+          })
+        }
+      }
     })
   })
 }
