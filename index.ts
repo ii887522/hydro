@@ -2,8 +2,9 @@
 
 import { rmdir, mkdir, readdir, rm } from 'fs'
 import DynamicUint8Array from './src/DynamicUint8Array.js'
+import Holder from './src/Holder.js'
 
-export { DynamicUint8Array }
+export { DynamicUint8Array, Holder }
 
 /**
  * It simply consumes any object passed in and do nothing for it and return immediately.
@@ -76,4 +77,13 @@ export function equal (l: Uint8Array, r: Uint8Array): boolean {
     if (l[i] !== r[i]) return false
   }
   return true
+}
+
+/**
+ * It swaps objects between these 2 holders.
+ */
+export function swap<T> (l: Holder<T>, r: Holder<T>): void {
+  const aux = l.value
+  l.value = r.value
+  r.value = aux
 }
