@@ -1,7 +1,8 @@
 'use strict';
 import { rmdir, mkdir, readdir, rm } from 'fs';
 import DynamicUint8Array from './src/DynamicUint8Array.js';
-export { DynamicUint8Array };
+import Holder from './src/Holder.js';
+export { DynamicUint8Array, Holder };
 export function consume(_) { }
 export async function emptyDir(dirPath) {
     return await new Promise((resolve, reject) => {
@@ -52,4 +53,9 @@ export function equal(l, r) {
             return false;
     }
     return true;
+}
+export function swap(l, r) {
+    const aux = l.value;
+    l.value = r.value;
+    r.value = aux;
 }
