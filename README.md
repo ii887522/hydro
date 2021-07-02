@@ -72,7 +72,6 @@ assert(substring('SDL2_image-2.0.5/lib/x86/libpng16-16.dll', 'image', '.dll') ==
 ```
 <br />
 
-
 ### **equal**
 ```ts
 function equal (l: Uint8Array, r: Uint8Array): boolean
@@ -84,6 +83,18 @@ assert(equal(new Uint8Array([1, 1, 1]), new Uint8Array([1, 1, 1])))
 ```
 <br />
 
+### **swap**
+```ts
+function swap<T> (l: Holder<T>, r: Holder<T>): void
+```
+It swaps objects between these 2 holders.
+#### **Example usage:**
+```ts
+const a = new Holder(0)
+const b = new Holder(1)
+swap(a, b)
+```
+<br />
 
 ### **DynamicUint8Array**
 ```ts
@@ -115,5 +126,18 @@ It appends array elements passed in to itself.
 #### **Example usage:**
 ```ts
 array.add([1, 1, 0])
+```
+<br />
+
+### **Holder**
+```ts
+class Holder
+```
+It holds an object.
+#### **Example usage:**
+```ts
+const count = new Holder(0)
+count.value = 1
+assert(count.value == 1)
 ```
 <br />

@@ -1,30 +1,27 @@
 'use strict';
+import Holder from './Holder.js';
+import { swap } from '../index.js';
 export default class DynamicUint8Array {
     constructor() {
         this.lData = new Uint8Array(32);
         this.rData = new Uint8Array(0);
-        this.currentData = this.lData;
-        this.nextData = this.rData;
+        this.currentData = new Holder(this.lData);
+        this.nextData = new Holder(this.rData);
         this.size = 0;
     }
     get() {
-        return this.currentData.slice(0, this.size);
+        return this.currentData.value.slice(0, this.size);
     }
     add(array) {
         const growthFactor = 1.33;
-        if (this.size + array.length > this.currentData.length)
+        if (this.size + array.length > this.currentData.value.length)
             this.grow(Math.floor((this.size + array.length) * growthFactor));
-        this.currentData.set(array, this.size);
+        this.currentData.value.set(array, this.size);
         this.size += array.length;
     }
     grow(nextSize) {
-        this.nextData = new Uint8Array(nextSize);
-        this.swapData();
-        this.currentData.set(this.nextData);
-    }
-    swapData() {
-        const aux = this.currentData;
-        this.currentData = this.nextData;
-        this.nextData = aux;
+        this.nextData.value = new Uint8Array(nextSize);
+        swap(this.currentData, this.nextData);
+        this.currentData.value.set(this.nextData.value);
     }
 }
