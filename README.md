@@ -8,7 +8,7 @@
 [![Npm package version](https://badgen.net/npm/v/@ii887522/hydro)](https://www.npmjs.com/package/@ii887522/hydro)
 [![Npm package daily downloads](https://badgen.net/npm/dm/@ii887522/hydro)](https://npmjs.com/package/@ii887522/hydro)
 [![Npm package license](https://badgen.net/npm/license/@ii887522/hydro)](https://npmjs.com/package/@ii887522/hydro)
-[![Npm package dependents](https://badgen.net/npm/dependents/@ii887522/hydro)](https://npmjs.ccom/package/@ii887522/hydro)
+[![Npm package dependents](https://badgen.net/npm/dependents/@ii887522/hydro)](https://npmjs.com/package/@ii887522/hydro)
 
 It is a general purpose JavaScript/TypeScript library that can help developers create various kinds of applications in no time.
 
