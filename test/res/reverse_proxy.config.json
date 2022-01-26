@@ -1,0 +1,22 @@
+{
+  "keyPath": "test/key.pem",
+  "certPath": "test/cert.pem",
+  "routes": [
+    {
+      "hostname": "example.dynv6.net",
+      "target": "http://localhost:1024"
+    },
+    {
+      "hostname": "www.example.dynv6.net",
+      "target": "http://localhost:1024"
+    },
+    {
+      "hostname": "abcdefg.dynv6.net",
+      "target": "http://localhost:1025"
+    },
+    {
+      "hostname": "www.abcdefg.dynv6.net",
+      "target": "http://localhost:1025"
+    }
+  ]
+}

@@ -1,61 +1,38 @@
 'use strict';
-import { rmdir, mkdir, readdir, rm } from 'fs';
-import DynamicUint8Array from './src/DynamicUint8Array.js';
 import Holder from './src/Holder.js';
-export { DynamicUint8Array, Holder };
+import Range from './src/Range.js';
+export { default as AvlTree } from './src/AvlTree.js';
+export * from './src/collection_ext.js';
+export * from './src/components.js';
+export { default as DynamicUint8Array } from './src/DynamicUint8Array.js';
+export * from './src/fs_ext.js';
+export { Holder };
+export * from './src/math_ext.js';
+export { Range };
+export { default as Reactive } from './src/Reactive.js';
+export * from './src/string_ext.js';
+export * from './src/worker_ext.js';
 export function consume(_) { }
-export async function emptyDir(dirPath) {
-    return await new Promise((resolve, reject) => {
-        rmdir(dirPath, { recursive: true }, _err => {
-            mkdir(dirPath, err => {
-                if (err !== null)
-                    reject(err);
-                resolve();
-            });
-        });
-    });
+export function requireDefined(object) {
+    if (object === undefined)
+        throw new ReferenceError('object should not be undefined!');
+    return object;
 }
-export async function removeFiles(extensionName, dirPath) {
-    return await new Promise((resolve, reject) => {
-        readdir(dirPath, (err, filePaths) => {
-            if (err !== null)
-                reject(err);
-            let pendingEntryCount = 0;
-            for (const filePath of filePaths) {
-                if (filePath.endsWith(`.${extensionName}`))
-                    ++pendingEntryCount;
-            }
-            for (const filePath of filePaths) {
-                if (filePath.endsWith(`.${extensionName}`)) {
-                    rm(`${dirPath}${filePath}`, err => {
-                        if (err !== null)
-                            reject(err);
-                        if (--pendingEntryCount === 0)
-                            resolve();
-                    });
-                }
-            }
-        });
-    });
-}
-export function getFileName(path) {
-    return path.substring(path.lastIndexOf('/') + 1);
-}
-export function substring(from, startText, endText) {
-    const startTextI = from.indexOf(startText);
-    return from.substring(startTextI, from.indexOf(endText, startTextI));
-}
-export function equal(l, r) {
-    if (l.length !== r.length)
+export function equal(left, right) {
+    if (left.length !== right.length)
         return false;
-    for (let i = 0; i !== l.length; ++i) {
-        if (l[i] !== r[i])
+    for (let i = 0; i !== left.length; ++i) {
+        if (left[i] !== right[i])
             return false;
     }
     return true;
 }
-export function swap(l, r) {
-    const aux = l.value;
-    l.value = r.value;
-    r.value = aux;
+export function swapInHolders(left, right) {
+    const aux = left.value;
+    left.value = right.value;
+    right.value = aux;
+}
+export function formatTime(seconds) {
+    const secondsPerMinute = 60;
+    return `${Math.floor(Math.ceil(seconds) / secondsPerMinute)}:${(Math.ceil(seconds) % secondsPerMinute).toString().padStart(2, '0')}`;
 }

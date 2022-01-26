@@ -1,20 +1,7 @@
 'use strict'
 
-import { getFileName, substring, equal, swap } from '../index.js'
+import { equal, swapInHolders, formatTime } from '../index.js'
 import Holder from '../src/Holder.js'
-
-test('getFileName', () => {
-  expect(getFileName('SDL2-2.0.12/lib/x86/SDL2.dll')).toBe('SDL2.dll')
-  expect(getFileName('SDL2_image-2.0.5/lib/x86/libpng16-16.dll')).toBe('libpng16-16.dll')
-  expect(getFileName('SDL2_ttf-2.0.15/lib/x86/SDL2_ttf.dll')).toBe('SDL2_ttf.dll')
-})
-
-test('substring', () => {
-  expect(substring('SDL2-2.0.12/lib/x86/SDL2.dll', 'SDL', 'l')).toBe('SDL2-2.0.12/')
-  expect(substring('SDL2_image-2.0.5/lib/x86/libpng16-16.dll', 'SDL', 'l')).toBe('SDL2_image-2.0.5/')
-  expect(substring('SDL2_image-2.0.5/lib/x86/libpng16-16.dll', 'image', 'l')).toBe('image-2.0.5/')
-  expect(substring('SDL2_image-2.0.5/lib/x86/libpng16-16.dll', 'image', '.dll')).toBe('image-2.0.5/lib/x86/libpng16-16')
-})
 
 test('equal', () => {
   expect(equal(new Uint8Array(0), new Uint8Array(0))).toBeTruthy()
@@ -36,40 +23,48 @@ test('equal', () => {
   expect(equal(new Uint8Array([1, 1, 1]), new Uint8Array([1, 1, 1]))).toBeTruthy()
 })
 
-test('swap', () => {
-  {
-    const a = new Holder(0)
-    const b = new Holder(1)
-    swap(a, b)
-    expect(a.value).toBe(1)
-    expect(b.value).toBe(0)
-  }
-  {
-    const a = new Holder(0)
-    const b = new Holder(2)
-    swap(a, b)
-    expect(a.value).toBe(2)
-    expect(b.value).toBe(0)
-  }
-  {
-    const a = new Holder(0)
-    const b = new Holder(3)
-    swap(a, b)
-    expect(a.value).toBe(3)
-    expect(b.value).toBe(0)
-  }
-  {
-    const a = new Holder(1)
-    const b = new Holder(3)
-    swap(a, b)
-    expect(a.value).toBe(3)
-    expect(b.value).toBe(1)
-  }
-  {
-    const a = new Holder(2)
-    const b = new Holder(3)
-    swap(a, b)
-    expect(a.value).toBe(3)
-    expect(b.value).toBe(2)
-  }
+test('swap in holders between 0 and 1', () => {
+  const a = new Holder(0)
+  const b = new Holder(1)
+  swapInHolders(a, b)
+  expect(a.value).toBe(1)
+  expect(b.value).toBe(0)
+})
+
+test('swap in holders between 0 and 2', () => {
+  const a = new Holder(0)
+  const b = new Holder(2)
+  swapInHolders(a, b)
+  expect(a.value).toBe(2)
+  expect(b.value).toBe(0)
+})
+
+test('swap in holders between 0 and 3', () => {
+  const a = new Holder(0)
+  const b = new Holder(3)
+  swapInHolders(a, b)
+  expect(a.value).toBe(3)
+  expect(b.value).toBe(0)
+})
+
+test('swap in holders between 1 and 3', () => {
+  const a = new Holder(1)
+  const b = new Holder(3)
+  swapInHolders(a, b)
+  expect(a.value).toBe(3)
+  expect(b.value).toBe(1)
+})
+
+test('swap in holders between 2 and 3', () => {
+  const a = new Holder(2)
+  const b = new Holder(3)
+  swapInHolders(a, b)
+  expect(a.value).toBe(3)
+  expect(b.value).toBe(2)
+})
+
+test('formatTime', () => {
+  expect(formatTime(89)).toBe('1:29')
+  expect(formatTime(59)).toBe('0:59')
+  expect(formatTime(601)).toBe('10:01')
 })
