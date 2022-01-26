@@ -2,7 +2,7 @@
 It is a binary search tree that automatically balances itself when operations such as insertions and deletions are applied to maintain the efficiency of all the operations supported in the tree. It allows the user to access objects in the tree in anyway. Objects with duplicate keys in the tree are not supported. All objects in the tree must have unique keys. If the user performs an inorder traversal of the tree, then all objects retrieved from the tree are sorted in ascending order by key only.
 
 ## Table of contents
-- [putBulk](https://github.com/ii887522/hydro/blob/master/docs/AvlTree.md#put)
+- [putBulk](https://github.com/ii887522/hydro/blob/master/docs/AvlTree.md#putBulk)
 - [put](https://github.com/ii887522/hydro/blob/master/docs/AvlTree.md#put)
 - [get](https://github.com/ii887522/hydro/blob/master/docs/AvlTree.md#get)
 - [min](https://github.com/ii887522/hydro/blob/master/docs/AvlTree.md#min)

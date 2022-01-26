@@ -1,12 +1,12 @@
 # collection_ext
 
 ## Table of contents
-- [swapInArray](https://github.com/ii887522/hydro/blob/master/docs/index.md#swapInArray)
-- [copy](https://github.com/ii887522/hydro/blob/master/docs/index.md#copy)
-- [insertionSort](https://github.com/ii887522/hydro/blob/master/docs/index.md#insertionSort)
-- [insertionSorts](https://github.com/ii887522/hydro/blob/master/docs/index.md#insertionSorts)
-- [mergeSort](https://github.com/ii887522/hydro/blob/master/docs/index.md#mergeSort)
-- [sort](https://github.com/ii887522/hydro/blob/master/docs/index.md#sort)
+- [swapInArray](https://github.com/ii887522/hydro/blob/master/docs/collection_ext.md#swapInArray)
+- [copy](https://github.com/ii887522/hydro/blob/master/docs/collection_ext.md#copy)
+- [insertionSort](https://github.com/ii887522/hydro/blob/master/docs/collection_ext.md#insertionSort)
+- [insertionSorts](https://github.com/ii887522/hydro/blob/master/docs/collection_ext.md#insertionSorts)
+- [mergeSort](https://github.com/ii887522/hydro/blob/master/docs/collection_ext.md#mergeSort)
+- [sort](https://github.com/ii887522/hydro/blob/master/docs/collection_ext.md#sort)
 
 ## **swapInArray**
 ```ts

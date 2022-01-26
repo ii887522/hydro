@@ -1,12 +1,12 @@
 # fs_ext
 
 ## Table of contents
-- [emptyDir](https://github.com/ii887522/hydro/blob/master/docs/index.md#emptyDir)
-- [removeFiles](https://github.com/ii887522/hydro/blob/master/docs/index.md#removeFiles)
-- [getFileName](https://github.com/ii887522/hydro/blob/master/docs/index.md#getFileName)
-- [hasFileWithExtension](https://github.com/ii887522/hydro/blob/master/docs/index.md#hasFileWithExtension)
-- [readObject](https://github.com/ii887522/hydro/blob/master/docs/index.md#readObject)
-- [writeObject](https://github.com/ii887522/hydro/blob/master/docs/index.md#writeObject)
+- [emptyDir](https://github.com/ii887522/hydro/blob/master/docs/fs_ext.md#emptyDir)
+- [removeFiles](https://github.com/ii887522/hydro/blob/master/docs/fs_ext.md#removeFiles)
+- [getFileName](https://github.com/ii887522/hydro/blob/master/docs/fs_ext.md#getFileName)
+- [hasFileWithExtension](https://github.com/ii887522/hydro/blob/master/docs/fs_ext.md#hasFileWithExtension)
+- [readObject](https://github.com/ii887522/hydro/blob/master/docs/fs_ext.md#readObject)
+- [writeObject](https://github.com/ii887522/hydro/blob/master/docs/fs_ext.md#writeObject)
 
 ## **emptyDir**
 ```ts
