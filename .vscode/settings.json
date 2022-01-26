@@ -2,7 +2,5 @@
   "javascript.validate.enable": false,
   "standard.usePackageJson": true,
   "standard.engine": "ts-standard",
-  "standard.validate": [
-    "javascript"
-  ]
+  "standard.validate": ["javascript"]
 }

@@ -11,7 +11,6 @@
     "experimentalDecorators": false,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "incremental": true,
     "jsx": "preserve",
     "listFilesOnly": false,
     "module": "ES2020",

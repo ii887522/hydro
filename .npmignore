@@ -1,12 +1,10 @@
+.github
 .vscode
-custom-node
+coverage
+docs
 test
 .editorconfig
 .gitignore
-*.cmd
-*.sh
+*.config.*js
 CODE_OF_CONDUCT.md
 tsconfig.*
-coverage
-.github
-*.config.*js
