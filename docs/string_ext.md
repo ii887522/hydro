@@ -1,8 +1,8 @@
 # string_ext
 
 ## Table of contents
-- [substring](https://github.com/ii887522/hydro/blob/master/docs/index.md#substring)
-- [isUint](https://github.com/ii887522/hydro/blob/master/docs/index.md#isUint)
+- [substring](https://github.com/ii887522/hydro/blob/master/docs/string_ext.md#substring)
+- [isUint](https://github.com/ii887522/hydro/blob/master/docs/string_ext.md#isUint)
 
 ## **substring**
 ```ts
