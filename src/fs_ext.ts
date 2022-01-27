@@ -1,6 +1,6 @@
 'use strict'
 
-import { rmdir, mkdir, readdir, rm, readFileSync, writeFileSync, access } from 'fs'
+import { mkdir, readdir, rm, readFileSync, writeFileSync, access } from 'fs'
 
 /**
  * It removes all files and subdirectories in the directory where its path is received from its parameter.
@@ -9,9 +9,12 @@ import { rmdir, mkdir, readdir, rm, readFileSync, writeFileSync, access } from '
  */
 export async function emptyDir (dirPath: string): Promise<void> {
   return await new Promise((resolve, reject) => {
-    rmdir(`${dirPath}/`, { recursive: true }, _err => {
+    rm(`${dirPath}/`, { recursive: true }, _err => {
       mkdir(`${dirPath}/`, err => {
-        if (err !== null) reject(err)
+        if (err !== null) {
+          reject(err)
+          return
+        }
         resolve()
       })
     })
@@ -27,7 +30,10 @@ export async function emptyDir (dirPath: string): Promise<void> {
 export async function removeFiles (extensionName: string, dirPath: string): Promise<void> {
   return await new Promise((resolve, reject) => {
     readdir(`${dirPath}/`, (err, filePaths) => {
-      if (err !== null) reject(err)
+      if (err !== null) {
+        resolve()
+        return
+      }
       let pendingEntryCount = 0
       for (const filePath of filePaths) {
         if (filePath.endsWith(`.${extensionName}`)) ++pendingEntryCount
@@ -35,7 +41,10 @@ export async function removeFiles (extensionName: string, dirPath: string): Prom
       for (const filePath of filePaths) {
         if (filePath.endsWith(`.${extensionName}`)) {
           rm(`${dirPath}/${filePath}`, err => {
-            if (err !== null) reject(err)
+            if (err !== null) {
+              reject(err)
+              return
+            }
             if (--pendingEntryCount === 0) resolve()
           })
         }
@@ -69,7 +78,10 @@ export async function hasFileWithExtension (extensionName: string, dirPath: stri
         return
       }
       readdir(`${dirPath}/`, (err, filePaths) => {
-        if (err !== null) reject(err)
+        if (err !== null) {
+          reject(err)
+          return
+        }
         for (const filePath of filePaths) {
           if (filePath.endsWith(`.${extensionName}`)) {
             resolve(true)
