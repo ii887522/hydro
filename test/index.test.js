@@ -1,6 +1,16 @@
 'use strict';
-import { equal, swapInHolders, formatTime } from '../index.js';
-import Holder from '../src/Holder.js';
+import { Boolean, requireDefined, equal, swapInHolders, formatTime } from '../index.js';
+import Holder from '../src/struct/Holder.js';
+test('Boolean', () => {
+    expect(Boolean('true')).toBeTruthy();
+    expect(Boolean('false')).toBeFalsy();
+    expect(Boolean('')).toBeFalsy();
+});
+test('requireDefined', () => {
+    expect(requireDefined({})).toEqual({});
+    expect(requireDefined(0)).toBe(0);
+    expect(() => requireDefined(undefined)).toThrow(ReferenceError);
+});
 test('equal', () => {
     expect(equal(new Uint8Array(0), new Uint8Array(0))).toBeTruthy();
     expect(equal(new Uint8Array([]), new Uint8Array(0))).toBeTruthy();
