@@ -1,9 +1,9 @@
 'use strict';
-export * from './src/any';
-export * from './src/collection';
-export * from './src/functions';
-export * from './src/reactive';
-export * from './src/struct';
+export * from './src/any/index.js';
+export * from './src/collection/index.js';
+export * from './src/functions/index.js';
+export * from './src/reactive/index.js';
+export * from './src/struct/index.js';
 export function consume(_) { }
 export function Boolean(value) {
     return value === 'true';
