@@ -2,6 +2,7 @@
 
 ## Table of contents
 - [consume](https://github.com/ii887522/hydro/blob/master/docs/index.md#consume)
+- [Boolean](https://github.com/ii887522/hydro/blob/master/docs/index.md#Boolean)
 - [requireDefined](https://github.com/ii887522/hydro/blob/master/docs/index.md#requireDefined)
 - [equal](https://github.com/ii887522/hydro/blob/master/docs/index.md#equal)
 - [swapInHolders](https://github.com/ii887522/hydro/blob/master/docs/index.md#swapInHolders)
@@ -21,6 +22,22 @@ consume(0)
 ```
 <br />
 
+## **Boolean**
+```ts
+function Boolean (value: string): boolean
+```
+It converts the string representation of boolean to a value of boolean type.
+
+`value`: The string representation of boolean.
+
+It returns a boolean.
+
+### **Example usage:**
+```ts
+expect(Boolean('true')).toBeTruthy()
+```
+<br />
+
 ## **requireDefined**
 ```ts
 function requireDefined<T> (object: T | undefined): T
@@ -33,7 +50,8 @@ It returns the `object` which is always defined.
 
 ### **Example usage:**
 ```ts
-requireDefined({ })
+expect(requireDefined({ })).toEqual({ })
+expect(() => requireDefined(undefined)).toThrow(ReferenceError)
 ```
 <br />
 

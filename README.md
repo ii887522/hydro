@@ -32,7 +32,7 @@ This project follows [Javascript Standard Style](https://standardjs.com/). Pleas
   - Markdown All in One
   - StandardJS - Javascript Standard Style
   - YAML
-- [Node.js 16.3.2](https://nodejs.org/en/) and later
+- [Node.js 16.14.2](https://nodejs.org/en/) and later
 
 ## Install dependencies
 ```sh
