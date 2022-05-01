@@ -2,11 +2,11 @@
 
 import Holder from './src/struct/Holder.js'
 
-export * from './src/any'
-export * from './src/collection'
-export * from './src/functions'
-export * from './src/reactive'
-export * from './src/struct'
+export * from './src/any/index.js'
+export * from './src/collection/index.js'
+export * from './src/functions/index.js'
+export * from './src/reactive/index.js'
+export * from './src/struct/index.js'
 
 /**
  * It simply consumes any object received and do nothing for it and return immediately.
