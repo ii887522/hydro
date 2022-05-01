@@ -1,19 +1,12 @@
 'use strict'
 
-import Holder from './src/Holder.js'
-import Range from './src/Range.js'
+import Holder from './src/struct/Holder.js'
 
-export { default as AvlTree } from './src/AvlTree.js'
-export * from './src/collection_ext.js'
-export * from './src/components.js'
-export { default as DynamicUint8Array } from './src/DynamicUint8Array.js'
-export * from './src/fs_ext.js'
-export { Holder }
-export * from './src/math_ext.js'
-export { Range }
-export { default as Reactive } from './src/Reactive.js'
-export * from './src/string_ext.js'
-export * from './src/worker_ext.js'
+export * from './src/any'
+export * from './src/collection'
+export * from './src/functions'
+export * from './src/reactive'
+export * from './src/struct'
 
 /**
  * It simply consumes any object received and do nothing for it and return immediately.
@@ -21,6 +14,16 @@ export * from './src/worker_ext.js'
  * @param _ The object to be consumed.
  */
 export function consume (_: any): void { }
+
+/**
+ * It converts the string representation of boolean to a value of boolean type.
+ *
+ * @param value The string representation of boolean.
+ * @returns A boolean.
+ */
+export function Boolean (value: string): boolean {
+  return value === 'true'
+}
 
 /**
  * It simply requires that the `object` received must not be undefined.
@@ -61,12 +64,15 @@ export function swapInHolders<T> (left: Holder<T>, right: Holder<T>): void {
 }
 
 /**
- * It converts seconds into a time with a format like 'mmm:ss'.
+ * It converts `seconds` into a time with a format like 'mmm:ss'.
  *
  * @param seconds The value to be converted.
  * @returns The received value in terms of time with a format like 'mmm:ss'.
  */
 export function formatTime (seconds: number): string {
   const secondsPerMinute = 60
-  return `${Math.floor(Math.ceil(seconds) / secondsPerMinute)}:${(Math.ceil(seconds) % secondsPerMinute).toString().padStart(2, '0')}`
+  return (
+    `${Math.floor(Math.ceil(seconds) / secondsPerMinute)}:` +
+    `${(Math.ceil(seconds) % secondsPerMinute).toString().padStart(2, '0')}`
+  )
 }
