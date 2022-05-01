@@ -1,6 +1,6 @@
 'use strict'
 
-import Bound from './Bound'
+import Bound from './Bound.js'
 
 /**
  * It defines a sequence between two values.
