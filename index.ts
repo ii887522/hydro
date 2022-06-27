@@ -4,7 +4,7 @@ import Holder from './src/struct/Holder.js'
 
 export * from './src/any/index.js'
 export * from './src/collection/index.js'
-export * from './src/functions/index.js'
+export * from './src/funcs/index.js'
 export * from './src/reactive/index.js'
 export * from './src/struct/index.js'
 

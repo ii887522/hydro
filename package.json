@@ -1,6 +1,6 @@
 {
   "name": "@ii887522/hydro",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "description": "It is a general purpose JavaScript/TypeScript library that can help developers create various kinds of applications in no time.",
   "main": "index.js",
   "scripts": {

@@ -1,5 +1,5 @@
 'use strict';
-import { getFileName, hasFileWithExtension, readObject, writeObject } from '../../../src/functions/fs_ext.js';
+import { getFileName, hasFileWithExtension, readObject, writeObject } from '../../../src/funcs/fs_ext.js';
 test('getFileName', () => {
     expect(getFileName('SDL2-2.0.12/lib/x86/SDL2.dll')).toBe('SDL2.dll');
     expect(getFileName('SDL2_image-2.0.5/lib/x86/libpng16-16.dll')).toBe('libpng16-16.dll');

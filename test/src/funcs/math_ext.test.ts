@@ -22,7 +22,7 @@ import {
   maxPositive,
   minNegative,
   maxNegative
-} from '../../../src/functions/math_ext.js'
+} from '../../../src/funcs/math_ext.js'
 
 test('toSeconds', () => {
   expect(toSeconds(0)).toBe(0)

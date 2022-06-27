@@ -1,9 +1,9 @@
 # worker_ext
 
 ## Table of contents
-- [spawnWorkers](https://github.com/ii887522/hydro/blob/master/docs/functions/worker_ext.md#spawnWorkers)
-- [spawnRevivableWorkers](https://github.com/ii887522/hydro/blob/master/docs/functions/worker_ext.md#spawnRevivableWorkers)
-- [supportIncrementalRestart](https://github.com/ii887522/hydro/blob/master/docs/functions/worker_ext.md#supportIncrementalRestart)
+- [spawnWorkers](https://github.com/ii887522/hydro/blob/master/docs/funcs/worker_ext.md#spawnWorkers)
+- [spawnRevivableWorkers](https://github.com/ii887522/hydro/blob/master/docs/funcs/worker_ext.md#spawnRevivableWorkers)
+- [supportIncrementalRestart](https://github.com/ii887522/hydro/blob/master/docs/funcs/worker_ext.md#supportIncrementalRestart)
 
 ## **spawnWorkers**
 ```ts

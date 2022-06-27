@@ -1,7 +1,7 @@
 # components
 
 ## Table of contents
-- [showPagination](https://github.com/ii887522/hydro/blob/master/docs/functions/components.md#showPagination)
+- [showPagination](https://github.com/ii887522/hydro/blob/master/docs/funcs/components.md#showPagination)
 
 ## **showPagination**
 ```ts

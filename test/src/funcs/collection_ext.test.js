@@ -1,5 +1,5 @@
 'use strict';
-import { swapInArray, copy, insertionSort, insertionSorts, mergeSort, sort, min, max, toArray, toMap, add, subtract } from '../../../src/functions/collection_ext.js';
+import { swapInArray, copy, insertionSort, insertionSorts, mergeSort, sort, min, max, toArray, toMap, add, subtract } from '../../../src/funcs/collection_ext.js';
 import Bound from '../../../src/struct/Bound.js';
 test('swap in array between 0 and 1', () => {
     const array = [0, 1];

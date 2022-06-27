@@ -1,5 +1,5 @@
 'use strict';
-import { substring, isUint } from '../../../src/functions/string_ext.js';
+import { substring, isUint } from '../../../src/funcs/string_ext.js';
 test('substring', () => {
     expect(substring('SDL2-2.0.12/lib/x86/SDL2.dll', 'SDL', 'l')).toBe('SDL2-2.0.12/');
     expect(substring('SDL2_image-2.0.5/lib/x86/libpng16-16.dll', 'SDL', 'l')).toBe('SDL2_image-2.0.5/');

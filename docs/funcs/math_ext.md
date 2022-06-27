@@ -1,22 +1,22 @@
 # math_ext
 
 ## Table of contents
-- [toSeconds](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#toSeconds)
-- [isOdd](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#isOdd)
-- [isEven](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#isEven)
-- [isPrime](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#isPrime)
-- [getNextPrime](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#getNextPrime)
-- [isPowerOfTwo](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#isPowerOfTwo)
-- [lerp](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#lerp)
-- [lerpVector2](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#lerpVector2)
-- [lerpVector3](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#lerpVector3)
-- [lerpVector4](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#lerpVector4)
-- [minPositive](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#minPositive)
-- [maxPositive](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#maxPositive)
-- [minNegative](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#minNegative)
-- [maxNegative](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#maxNegative)
-- [linearMap](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#linearMap)
-- [linearMapVector2](https://github.com/ii887522/hydro/blob/master/docs/functions/math_ext.md#linearMapVector2)
+- [toSeconds](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#toSeconds)
+- [isOdd](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isOdd)
+- [isEven](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isEven)
+- [isPrime](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isPrime)
+- [getNextPrime](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#getNextPrime)
+- [isPowerOfTwo](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isPowerOfTwo)
+- [lerp](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerp)
+- [lerpVector2](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVector2)
+- [lerpVector3](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVector3)
+- [lerpVector4](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVector4)
+- [minPositive](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#minPositive)
+- [maxPositive](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#maxPositive)
+- [minNegative](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#minNegative)
+- [maxNegative](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#maxNegative)
+- [linearMap](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#linearMap)
+- [linearMapVector2](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#linearMapVector2)
 
 ## **toSeconds**
 ```ts

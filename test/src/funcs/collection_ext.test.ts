@@ -2,7 +2,7 @@
 
 import {
   swapInArray, copy, insertionSort, insertionSorts, mergeSort, sort, min, max, toArray, toMap, add, subtract
-} from '../../../src/functions/collection_ext.js'
+} from '../../../src/funcs/collection_ext.js'
 
 import Bound from '../../../src/struct/Bound.js'
 

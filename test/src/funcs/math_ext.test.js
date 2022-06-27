@@ -3,7 +3,7 @@ import Vec2 from '../../../src/struct/Vec2.js';
 import Vec3 from '../../../src/struct/Vec3.js';
 import Vec4 from '../../../src/struct/Vec4.js';
 import Seq from '../../../src/struct/Seq.js';
-import { toSeconds, isOdd, isEven, isPrime, getNextPrime, isPowerOfTwo, lerp, lerpVector2, lerpVector3, lerpVector4, linearMap, linearMapVector2, minPositive, maxPositive, minNegative, maxNegative } from '../../../src/functions/math_ext.js';
+import { toSeconds, isOdd, isEven, isPrime, getNextPrime, isPowerOfTwo, lerp, lerpVector2, lerpVector3, lerpVector4, linearMap, linearMapVector2, minPositive, maxPositive, minNegative, maxNegative } from '../../../src/funcs/math_ext.js';
 test('toSeconds', () => {
     expect(toSeconds(0)).toBe(0);
     expect(toSeconds(1e+9)).toBe(1);

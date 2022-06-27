@@ -1,18 +1,18 @@
 # collection_ext
 
 ## Table of contents
-- [swapInArray](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#swapInArray)
-- [copy](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#copy)
-- [insertionSort](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#insertionSort)
-- [insertionSorts](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#insertionSorts)
-- [mergeSort](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#mergeSort)
-- [sort](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#sort)
-- [min](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#min)
-- [max](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#max)
-- [toArray](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#toArray)
-- [toMap](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#toMap)
-- [add](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#add)
-- [subtract](https://github.com/ii887522/hydro/blob/master/docs/functions/collection_ext.md#subtract)
+- [swapInArray](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#swapInArray)
+- [copy](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#copy)
+- [insertionSort](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#insertionSort)
+- [insertionSorts](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#insertionSorts)
+- [mergeSort](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#mergeSort)
+- [sort](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#sort)
+- [min](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#min)
+- [max](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#max)
+- [toArray](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#toArray)
+- [toMap](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#toMap)
+- [add](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#add)
+- [subtract](https://github.com/ii887522/hydro/blob/master/docs/funcs/collection_ext.md#subtract)
 
 ## **swapInArray**
 ```ts
