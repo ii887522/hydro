@@ -1,5 +1,5 @@
 # ReactivityManager
-It is a manager that allows users to register watchers more conveniently and unwatch all registered watchers at once.
+A manager that allows users to register watchers more conveniently and unwatch all registered watchers at once.
 
 ## Table of contents
 - [watch](https://github.com/ii887522/hydro/blob/master/docs/any/ReactivityManager.md#watch)
@@ -11,12 +11,14 @@ It is a manager that allows users to register watchers more conveniently and unw
 ```ts
 watch<A, R> (reactive: Reactive<A>, onChange: (value: A) => R): Reactive<R>
 ```
-It registers a new watcher that transforms the reactive object received into a new reactive object that holds a
+Registers a new watcher that transforms the reactive object received into a new reactive object that holds a
 different type.
 
 `reactive`: The reactive object which its value changes are listened for.
-`onChange`: It is a watcher that listens for new value and processes it.
-It returns a transformed reactive object.
+
+`onChange`: A watcher that listens for new value and processes it.
+
+A transformed reactive object.
 
 ### **Example usage:**
 ```ts
@@ -31,14 +33,16 @@ expect(squaredValue.value).toBe(4)
 ```ts
 watch2<A, B, R> (reactiveA: Reactive<A>, reactiveB: Reactive<B>, onChange: (a: A, b: B) => R): Reactive<R>
 ```
-It registers a new watcher that transforms these reactive objects received into a new reactive object that holds a
+Registers a new watcher that transforms these reactive objects received into a new reactive object that holds a
 different type.
 
 `reactiveA`: The first reactive object which its value changes are listened for.
-`reactiveB`: The second reactive object which its value changes are listened for.
-`onChange`: It is a watcher that listens for new value and processes it.
 
-It returns A transformed reactive object.
+`reactiveB`: The second reactive object which its value changes are listened for.
+
+`onChange`: A watcher that listens for new value and processes it.
+
+A transformed reactive object.
 
 ### **Example usage:**
 ```ts
@@ -56,15 +60,18 @@ watch3<A, B, C, R> (
   reactiveA: Reactive<A>, reactiveB: Reactive<B>, reactiveC: Reactive<C>, onChange: (a: A, b: B, c: C) => R
 ): Reactive<R>
 ```
-It registers a new watcher that transforms these reactive objects received into a new reactive object that holds a
+Registers a new watcher that transforms these reactive objects received into a new reactive object that holds a
 different type.
 
 `reactiveA`: The first reactive object which its value changes are listened for.
-`reactiveB`: The second reactive object which its value changes are listened for.
-`reactiveC`: The third reactive object which its value changes are listened for.
-`onChange`: It is a watcher that listens for new value and processes it.
 
-It returns a transformed reactive object.
+`reactiveB`: The second reactive object which its value changes are listened for.
+
+`reactiveC`: The third reactive object which its value changes are listened for.
+
+`onChange`: A watcher that listens for new value and processes it.
+
+A transformed reactive object.
 
 ### **Example usage:**
 ```ts
@@ -81,7 +88,7 @@ expect(sum.value).toBe(6)
 ```ts
 freeWatchers (): void
 ```
-It detaches all watchers registered through this manager.
+Detaches all watchers registered through this manager.
 
 ### **Example usage:**
 ```ts

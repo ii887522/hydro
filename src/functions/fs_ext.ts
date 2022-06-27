@@ -3,7 +3,7 @@
 import { mkdir, readdir, rm, readFileSync, writeFileSync, access } from 'fs'
 
 /**
- * It removes all files and subdirectories in the directory where its path is received from its parameter.
+ * Removes all files and subdirectories in the directory where its path is received from its parameter.
  *
  * @param dirPath The path where the directory is to be emptied. The path must not ends with /
  */
@@ -22,7 +22,7 @@ export async function emptyDir (dirPath: string): Promise<void> {
 }
 
 /**
- * It removes all files in the directory where its path is received from its parameter with matching extension name
+ * Removes all files in the directory where its path is received from its parameter with matching extension name
  * received.
  *
  * @param extensionName Files where its file name contains the extension name will be removed. The name must not starts
@@ -56,7 +56,7 @@ export async function removeFiles (extensionName: string, dirPath: string): Prom
 }
 
 /**
- * It returns the file name with its extension name from the `path` given.
+ * Returns the file name with its extension name from the `path` given.
  *
  * @param path The file path where its file name is to be extracted from.
  * @return The file name from the `path` given.
@@ -66,7 +66,7 @@ export function getFileName (path: string): string {
 }
 
 /**
- * It checks whether the directory path given has at least one file with an `extensionName` that is received from the
+ * Checks whether the directory path given has at least one file with an `extensionName` that is received from the
  * parameter.
  *
  * @param extensionName The extension name used during checking. The name must not start with .

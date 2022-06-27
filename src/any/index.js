@@ -1,5 +1,5 @@
 'use strict';
-export { default as constants } from './constants.js';
+export { default as consts } from './consts.js';
 export { default as Delayed } from './Delayed.js';
 export { default as Dynamic } from './Dynamic.js';
 export { default as IDManager } from './IDManager.js';

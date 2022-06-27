@@ -1,8 +1,8 @@
 'use strict';
-import Sequence from '../struct/Sequence.js';
-import Vector2 from '../struct/Vector2.js';
-import Vector3 from '../struct/Vector3.js';
-import Vector4 from '../struct/Vector4.js';
+import Seq from '../struct/Seq.js';
+import Vec2 from '../struct/Vec2.js';
+import Vec3 from '../struct/Vec3.js';
+import Vec4 from '../struct/Vec4.js';
 export function toSeconds(nanoseconds) {
     return nanoseconds * 1e-9;
 }
@@ -48,65 +48,65 @@ export function lerp(t, a, b) {
     return a + (b - a) * t;
 }
 export function lerpVector2(t, a, b) {
-    return new Vector2(lerp(t, a.x, b.x), lerp(t, a.y, b.y));
+    return new Vec2(lerp(t, a.x, b.x), lerp(t, a.y, b.y));
 }
 export function lerpVector3(t, a, b) {
-    return new Vector3(lerp(t, a.x, b.x), lerp(t, a.y, b.y), lerp(t, a.z, b.z));
+    return new Vec3(lerp(t, a.x, b.x), lerp(t, a.y, b.y), lerp(t, a.z, b.z));
 }
 export function lerpVector4(t, a, b) {
-    return new Vector4(lerp(t, a.x, b.x), lerp(t, a.y, b.y), lerp(t, a.z, b.z), lerp(t, a.w, b.w));
+    return new Vec4(lerp(t, a.x, b.x), lerp(t, a.y, b.y), lerp(t, a.z, b.z), lerp(t, a.w, b.w));
 }
 export function minPositive(...values) {
     let minPositiveValue = Infinity;
-    let index = -1;
+    let id = -1;
     for (let i = 0; i !== values.length; ++i) {
         const value = values[i];
         if (value === undefined || value < 0 || value >= minPositiveValue)
             continue;
         minPositiveValue = value;
-        index = i;
+        id = i;
     }
-    return { index, value: minPositiveValue };
+    return { id, value: minPositiveValue };
 }
 export function maxPositive(...values) {
     let maxPositiveValue = -Infinity;
-    let index = -1;
+    let id = -1;
     for (let i = 0; i !== values.length; ++i) {
         const value = values[i];
         if (value === undefined || value < 0 || value <= maxPositiveValue)
             continue;
         maxPositiveValue = value;
-        index = i;
+        id = i;
     }
-    return { index, value: maxPositiveValue };
+    return { id, value: maxPositiveValue };
 }
 export function minNegative(...values) {
     let minNegativeValue = Infinity;
-    let index = -1;
+    let id = -1;
     for (let i = 0; i !== values.length; ++i) {
         const value = values[i];
         if (value === undefined || value >= 0 || value >= minNegativeValue)
             continue;
         minNegativeValue = value;
-        index = i;
+        id = i;
     }
-    return { index, value: minNegativeValue };
+    return { id, value: minNegativeValue };
 }
 export function maxNegative(...values) {
     let maxNegativeValue = -Infinity;
-    let index = -1;
+    let id = -1;
     for (let i = 0; i !== values.length; ++i) {
         const value = values[i];
         if (value === undefined || value >= 0 || value <= maxNegativeValue)
             continue;
         maxNegativeValue = value;
-        index = i;
+        id = i;
     }
-    return { index, value: maxNegativeValue };
+    return { id, value: maxNegativeValue };
 }
 export function linearMap(value, from, to) {
     return to.unnormalize(from.normalize(value));
 }
 export function linearMapVector2(value, fromPosition, fromSize, toPosition, toSize) {
-    return new Vector2(linearMap(value.x, new Sequence(fromPosition.x, fromPosition.x + fromSize.x), new Sequence(toPosition.x, toPosition.x + toSize.x)), linearMap(value.y, new Sequence(fromPosition.y, fromPosition.y + fromSize.y), new Sequence(toPosition.y, toPosition.y + toSize.y)));
+    return new Vec2(linearMap(value.x, new Seq(fromPosition.x, fromPosition.x + fromSize.x), new Seq(toPosition.x, toPosition.x + toSize.x)), linearMap(value.y, new Seq(fromPosition.y, fromPosition.y + fromSize.y), new Seq(toPosition.y, toPosition.y + toSize.y)));
 }

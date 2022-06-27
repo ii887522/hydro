@@ -7,10 +7,10 @@
 ```ts
 function showPagination (
   items: string[],
-  { query, showHeader, onSelected }: { query: string, showHeader: () => void, onSelected: (index: number) => void
+  { query, showHeader, onSelected }: { query: string, showHeader: () => void, onSelected: (id: number) => void }
 ): void
 ```
-It displays a page that allows the user to navigate back and forth to select an item from a long list without needing to show a long page.
+Displays a page that allows the user to navigate back and forth to select an item from a long list without needing to show a long page.
 
 `items`: The items that the user selects from.
 
@@ -31,8 +31,8 @@ showPagination(
       console.log('          Color list          ')
       console.log('------------------------------')
     },
-    onSelected: index => {
-      console.log(`You selected ${choices[index].toLowerCase()} color!`)
+    onSelected: id => {
+      console.log(`You selected ${choices[id].toLowerCase()} color!`)
     }
   }
 )

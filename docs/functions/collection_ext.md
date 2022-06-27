@@ -16,15 +16,15 @@
 
 ## **swapInArray**
 ```ts
-function swapInArray<T> (array: T[], leftIndex: number, rightIndex: number): void
+function swapInArray<T> (array: T[], leftID: number, rightID: number): void
 ```
-It exchanges objects that are inside the received `array`.
+Exchanges objects that are inside the received `array`.
 
 `array`: The array that contains objects to be exchanged with each other.
 
-`leftIndex`: The index which identifies the left object to be moved.
+`leftID`: The index which identifies the left object to be moved.
 
-`rightIndex`: The index which identifies the right object to be moved.
+`rightID`: The index which identifies the right object to be moved.
 
 ### **Example usage:**
 ```ts
@@ -38,7 +38,7 @@ expect(array).toEqual([1, 0])
 ```ts
 function copy<T> (srcArray: T[], destArray: T[]): void
 ```
-It copy the whole contents of the `srcArray` into the `destArray`.
+Copy the whole contents of the `srcArray` into the `destArray`.
 
 `srcArray`: The array to copy from.
 
@@ -62,7 +62,7 @@ function insertionSort<T> (
   compare: (left: T, right: T) => boolean = (left, right) => left > right
 ): void
 ```
-It sorts a portion of the array `received` by using insertion sort.
+Sorts a portion of the array `received` by using insertion sort.
 
 `array`: The array to be sorted from.
 
@@ -85,7 +85,7 @@ function insertionSorts<T> (
   runSize: number = Number.MAX_SAFE_INTEGER, compare: (left: T, right: T) => boolean = (left, right) => left > right
 ): void
 ```
-It sorts the `array` received into a sequence of sorted runs by using insertion sort. A run is a number of consecutive elements which is a part of an `array`.
+Sorts the `array` received into a sequence of sorted runs by using insertion sort. A run is a number of consecutive elements which is a part of an `array`.
 
 `array`: The array to be sorted from.
 
@@ -107,7 +107,7 @@ function mergeSort<T> (
   array: T[], sortedRunSize: number = 1, compare: (left: T, right: T) => boolean = (left, right) => left > right
 ): void
 ```
-It sorts the `array` received by using merge sort and assuming that there is a sequence of sorted runs in the `array`. Each sorted run has `sortedRunSize` consecutive elements which is a part of the `array`.
+Sorts the `array` received by using merge sort and assuming that there is a sequence of sorted runs in the `array`. Each sorted run has `sortedRunSize` consecutive elements which is a part of the `array`.
 
 `array`: The array to be sorted from.
 
@@ -127,7 +127,7 @@ expect(numbers).toEqual([3, 3, 2, 0])
 ```ts
 function sort<T> (array: T[], compare: (left: T, right: T) => boolean = (left, right) => left > right): void
 ```
-It sorts the `array` received by using tim sort.
+Sorts the `array` received by using tim sort.
 
 `array`: The array to be sorted from.
 
@@ -143,15 +143,15 @@ expect(numbers).toEqual([3, 3, 2, 0])
 
 ## **min**
 ```ts
-function min<T> (array: T[], getValue: (object: T, index: number) => number): T[]
+function min<T> (array: T[], getValue: (object: T, id: number) => number): T[]
 ```
-It find the minimum objects from the `array` received determined by the value retrieved from each object in the `array` through the `getValue` function given.
+Find the minimum objects from the `array` received determined by the value retrieved from each object in the `array` through the `getValue` function given.
 
 `array`: The array to be searched from.
 
 `getValue`: The function that retrieves a value from the object in the `array`.
 
-It returns The minimum objects.
+Returns The minimum objects.
 
 ### **Example usage:**
 ```ts
@@ -161,15 +161,15 @@ expect(min([3, 1, 0], value => value)).toEqual([0])
 
 ## **max**
 ```ts
-function max<T> (array: T[], getValue: (object: T, index: number) => number): T[]
+function max<T> (array: T[], getValue: (object: T, id: number) => number): T[]
 ```
-It find the maximum objects from the `array` received determined by the value retrieved from each object in the `array` through the `getValue` function given.
+Find the maximum objects from the `array` received determined by the value retrieved from each object in the `array` through the `getValue` function given.
 
 `array`: The array to be searched from.
 
 `getValue`: The function that retrieves a value from the object in the `array`.
 
-It returns The maximum objects.
+Returns The maximum objects.
 
 ### **Example usage:**
 ```ts
@@ -181,11 +181,11 @@ expect(max([3, 1, 0], value => value)).toEqual([3])
 ```ts
 function toArray<T extends NumbersHashable> (map: { [key: string]: T[] }): T[]
 ```
-It converts the `map` given which may have duplicate objects into an array without duplicates.
+Converts the `map` given which may have duplicate objects into an array without duplicates.
 
 `map`: The map to be converted from.
 
-It returns An array without duplicates.
+Returns An array without duplicates.
 
 ### **Example usage:**
 ```ts
@@ -205,11 +205,11 @@ expect(
 ```ts
 function toMap<T extends NumbersHashable> (array: T[]): { [key: string]: T[] }
 ```
-It converts the `array` given without duplicate objects into a map with duplicates.
+Converts the `array` given without duplicate objects into a map with duplicates.
 
 `array`: The array to be converted from.
 
-It returns A map with duplicates.
+Returns a map with duplicates.
 
 ### **Example usage:**
 ```ts
@@ -229,13 +229,13 @@ expect(
 ```ts
 function add<T extends NumbersHashable> (am: { [k: string]: T[] }, bm: { [k: string]: T[] }): { [k: string]: T[] }
 ```
-It concatenates two maps received that may have duplicate objects into a map which contains duplicates.
+Concatenates two maps received that may have duplicate objects into a map which contains duplicates.
 
 `am`: The first map to include.
 
 `bm`: The second map to include.
 
-It returns a map which contains duplicates.
+Returns a map which contains duplicates.
 
 ### **Example usage:**
 ```ts
@@ -262,13 +262,13 @@ expect(
 ```ts
 function subtract<T extends NumbersHashable> (am: { [k: string]: T[] }, bm: { [k: string]: T[] }): { [k: string]: T[] }
 ```
-It removes objects from the first map where they exist in the second map and returns it.
+Removes objects from the first map where they exist in the second map and returns it.
 
 `am` The map to remove objects from.
 
 `bm` The map which contains the objects to be searched from the first map for removal.
 
-It returns The first map without objects that exist in the second map.
+Returns The first map without objects that exist in the second map.
 
 ### **Example usage:**
 ```ts

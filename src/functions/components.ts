@@ -3,8 +3,8 @@
 import { keyInSelect } from 'readline-sync'
 
 /**
- * It displays a page that allows the user to navigate back and forth to select an item from a long list without
- * needing to show a long page.
+ * Displays a page that allows the user to navigate back and forth to select an item from a long list without needing to
+ * show a long page.
  *
  * @param items The items that the user selects from.
  * @param query A prompt message asking for user input.
@@ -20,30 +20,30 @@ export function showPagination (
   }: {
     query?: string
     showHeader?: () => void
-    onSelected?: (index: number) => void
+    onSelected?: (id: number) => void
   } = { }
 ): void {
   let selectList
-  let pageIndex = 0
+  let pageID = 0
   while (true) {
     console.log()
     showHeader()
     selectList = []
-    if (pageIndex !== 0) selectList.push('Previous page')
+    if (pageID !== 0) selectList.push('Previous page')
     const maxPageItemCount = 8
-    selectList.push(...items.slice(pageIndex * maxPageItemCount, (pageIndex + 1) * maxPageItemCount))
+    selectList.push(...items.slice(pageID * maxPageItemCount, (pageID + 1) * maxPageItemCount))
     if (selectList.length === 0) {
       console.log('------ No items found! ------')
       break
     }
-    const lastPageIndex = Math.ceil(items.length / maxPageItemCount) - 1
-    if (pageIndex !== lastPageIndex) selectList.push('Next page')
-    const index = keyInSelect(selectList, query, { cancel: 'Back' })
-    if (index === -1) break
-    if (pageIndex !== 0 && index === 0) --pageIndex
-    else if (pageIndex !== lastPageIndex && index === selectList.length - 1) ++pageIndex
+    const lastPageID = Math.ceil(items.length / maxPageItemCount) - 1
+    if (pageID !== lastPageID) selectList.push('Next page')
+    const id = keyInSelect(selectList, query, { cancel: 'Back' })
+    if (id === -1) break
+    if (pageID !== 0 && id === 0) --pageID
+    else if (pageID !== lastPageID && id === selectList.length - 1) ++pageID
     else {
-      onSelected(pageIndex * maxPageItemCount + index - (pageIndex === 0 ? 0 : 1))
+      onSelected(pageID * maxPageItemCount + id - (pageID === 0 ? 0 : 1))
       break
     }
   }

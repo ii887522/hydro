@@ -1,17 +1,17 @@
 'use strict'
 
-export default class Vector3 {
+export default class Vec3 {
   private _length = 0
   private isLengthValid = false
 
   // eslint-disable-next-line no-useless-constructor
   constructor (private _x: number = 0, private _y: number = 0, private _z: number = 0) { }
 
-  static fromVector3 (that: Vector3): Vector3 {
+  static fromVec3 (that: Vec3): Vec3 {
     return new this(that.x, that.y, that.z)
   }
 
-  static fromValue (value: number): Vector3 {
+  static fromValue (value: number): Vec3 {
     return new this(value, value, value)
   }
 
@@ -25,8 +25,8 @@ export default class Vector3 {
     this.isLengthValid = false
   }
 
-  withX (value: number): Vector3 {
-    return new Vector3(value, this.y, this.z)
+  withX (value: number): Vec3 {
+    return new Vec3(value, this.y, this.z)
   }
 
   get y (): number {
@@ -39,8 +39,8 @@ export default class Vector3 {
     this.isLengthValid = false
   }
 
-  withY (value: number): Vector3 {
-    return new Vector3(this.x, value, this.z)
+  withY (value: number): Vec3 {
+    return new Vec3(this.x, value, this.z)
   }
 
   get z (): number {
@@ -53,27 +53,27 @@ export default class Vector3 {
     this.isLengthValid = false
   }
 
-  withZ (value: number): Vector3 {
-    return new Vector3(this.x, this.y, value)
+  withZ (value: number): Vec3 {
+    return new Vec3(this.x, this.y, value)
   }
 
-  plus (that: Vector3): Vector3 {
-    return new Vector3(this.x + that.x, this.y + that.y, this.z + that.z)
+  plus (that: Vec3): Vec3 {
+    return new Vec3(this.x + that.x, this.y + that.y, this.z + that.z)
   }
 
-  minus (that: Vector3): Vector3 {
-    return new Vector3(this.x - that.x, this.y - that.y, this.z - that.z)
+  minus (that: Vec3): Vec3 {
+    return new Vec3(this.x - that.x, this.y - that.y, this.z - that.z)
   }
 
-  times (value: number): Vector3 {
-    return new Vector3(this.x * value, this.y * value, this.z * value)
+  times (value: number): Vec3 {
+    return new Vec3(this.x * value, this.y * value, this.z * value)
   }
 
-  divide (value: number): Vector3 {
-    return new Vector3(this.x / value, this.y / value, this.z / value)
+  divide (value: number): Vec3 {
+    return new Vec3(this.x / value, this.y / value, this.z / value)
   }
 
-  assign (that: Vector3): void {
+  assign (that: Vec3): void {
     if (this.isEqual(that)) return
     this.x = that.x
     this.y = that.y
@@ -81,16 +81,16 @@ export default class Vector3 {
     this.isLengthValid = false
   }
 
-  plusAssign (that: Vector3): void {
-    if (that.isEqual(new Vector3())) return
+  plusAssign (that: Vec3): void {
+    if (that.isEqual(new Vec3())) return
     this.x += that.x
     this.y += that.y
     this.z += that.z
     this.isLengthValid = false
   }
 
-  minusAssign (that: Vector3): void {
-    if (that.isEqual(new Vector3())) return
+  minusAssign (that: Vec3): void {
+    if (that.isEqual(new Vec3())) return
     this.x -= that.x
     this.y -= that.y
     this.z -= that.z
@@ -113,11 +113,11 @@ export default class Vector3 {
     this.isLengthValid = false
   }
 
-  isEqual (that: Vector3): boolean {
+  isEqual (that: Vec3): boolean {
     return this.x === that.x && this.y === that.y && this.z === that.z
   }
 
-  isNotEqual (that: Vector3): boolean {
+  isNotEqual (that: Vec3): boolean {
     return this.x !== that.x || this.y !== that.y || this.z !== that.z
   }
 
@@ -133,24 +133,24 @@ export default class Vector3 {
     return result
   }
 
-  get normalized (): Vector3 {
+  get normalized (): Vec3 {
     return this.divide(this.length)
   }
 
-  get xFliped (): Vector3 {
-    return new Vector3(-this.x, this.y, this.z)
+  get xFliped (): Vec3 {
+    return new Vec3(-this.x, this.y, this.z)
   }
 
-  get yFliped (): Vector3 {
-    return new Vector3(this.x, -this.y, this.z)
+  get yFliped (): Vec3 {
+    return new Vec3(this.x, -this.y, this.z)
   }
 
-  get zFliped (): Vector3 {
-    return new Vector3(this.x, this.y, -this.z)
+  get zFliped (): Vec3 {
+    return new Vec3(this.x, this.y, -this.z)
   }
 
-  get fliped (): Vector3 {
-    return new Vector3(-this.x, -this.y, -this.z)
+  get fliped (): Vec3 {
+    return new Vec3(-this.x, -this.y, -this.z)
   }
 
   toString (): string {

@@ -9,7 +9,7 @@
     "build:watch": "tsc --watch",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --coverage",
     "test:ci": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --ci",
-    "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --watch"
+    "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --watchAll"
   },
   "type": "module",
   "repository": {

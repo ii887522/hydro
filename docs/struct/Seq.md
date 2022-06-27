@@ -1,5 +1,5 @@
-# Sequence
-It defines a sequence between two values.
+# Seq
+Defines a sequence between two values.
 
 ## Table of contents
 - [normalize](https://github.com/ii887522/hydro/blob/master/docs/struct/Sequence.md#normalize)
@@ -10,11 +10,11 @@ It defines a sequence between two values.
 ```ts
 normalize (value: number): number
 ```
-It maps the `value` given in this sequence to a value between 0 and 1.
+Maps the `value` given in this sequence to a value between 0 and 1.
 
 `value`: The value to map from.
 
-It returns a value between 0 and 1.
+Returns a value between 0 and 1.
 
 ### **Example usage:**
 ```ts
@@ -26,11 +26,11 @@ expect(new Sequence(0, 5).normalize(1)).toBe(0.2)
 ```ts
 unnormalize (value: number): number
 ```
-It maps the `value` given between 0 and 1 to a value belongs to this sequence.
+Maps the `value` given between 0 and 1 to a value belongs to this sequence.
 
 `value`: The value to map from.
 
-It returns a value belongs to this sequence.
+Returns a value belongs to this sequence.
 
 ### **Example usage:**
 ```ts
@@ -42,9 +42,9 @@ expect(new Sequence(0, 5).unnormalize(0.2)).toBe(1)
 ```ts
 toBound (): Bound
 ```
-It treats this sequence as a boundary.
+Treats this sequence as a boundary.
 
-It returns A boundary that represents this sequence.
+Returns a boundary that represents this sequence.
 
 ### **Example usage:**
 ```ts

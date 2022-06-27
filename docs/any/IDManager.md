@@ -1,5 +1,5 @@
 # IDManager
-It manages and recycles id numbers to be used for any purposes so that id numbers will not become depleted if users keep retrieving and discarding id numbers.
+Manages and recycles id numbers to be used for any purposes so that id numbers will not become depleted if users keep retrieving and discarding id numbers.
 
 ## Table of contents
 - [next](https://github.com/ii887522/hydro/blob/master/docs/any/IDManager.md#next)
@@ -9,9 +9,7 @@ It manages and recycles id numbers to be used for any purposes so that id number
 ```ts
 next (): number
 ```
-It returns the next available id number.
-
-It returns an available id number.
+Returns the next available id number.
 
 ### **Example usage:**
 ```ts
@@ -26,7 +24,7 @@ expect(idManager.next()).toBe(2)
 ```ts
 free (id: number): void
 ```
-It makes the allocated id number to become available again and ready to be used in the future.
+Makes the allocated id number to become available again and ready to be used in the future.
 
 `id`: The allocated id number to return.
 

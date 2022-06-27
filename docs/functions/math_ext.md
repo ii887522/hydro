@@ -22,11 +22,11 @@
 ```ts
 function toSeconds(nanoseconds: number): number
 ```
-It converts nanoseconds into seconds.
+Converts nanoseconds into seconds.
 
 `nanoseconds`: The value to be converted.
 
-It returns the received value in terms of seconds.
+Returns the received value in terms of seconds.
 
 ### **Example usage:**
 ```ts
@@ -38,11 +38,11 @@ expect(toSeconds(2e+9)).toBe(2)
 ```ts
 function isOdd(value: number): boolean
 ```
-It checks whether the received `value` is an odd number.
+Checks whether the received `value` is an odd number.
 
 `value`: The value to be checked.
 
-It returns true if the `value` is an odd number, false otherwise.
+Returns true if the `value` is an odd number, false otherwise.
 
 ### **Example usage:**
 ```ts
@@ -54,11 +54,11 @@ expect(isOdd(0)).toBeFalsy()
 ```ts
 function isEven(value: number): boolean
 ```
-It checks whether the received `value` is an even number.
+Checks whether the received `value` is an even number.
 
 `value`: The value to be checked.
 
-It returns true if the `value` is an even number, false otherwise.
+Returns true if the `value` is an even number, false otherwise.
 
 ### **Example usage:**
 ```ts
@@ -70,11 +70,11 @@ expect(isEven(0)).toBeTruthy()
 ```ts
 function isPrime(value: number): boolean
 ```
-It checks whether the received `value` is a prime number.
+Checks whether the received `value` is a prime number.
 
 `value`: The value to be checked.
 
-It returns true if the `value` is a prime number, false otherwise.
+Returns true if the `value` is a prime number, false otherwise.
 
 ### **Example usage:**
 ```ts
@@ -86,11 +86,11 @@ expect(isPrime(0)).toBeFalsy()
 ```ts
 function getNextPrime(from: number): number
 ```
-It finds out the next prime number after the given `from`.
+Finds out the next prime number after the given `from`.
 
 `from`: The starting value to find the next prime number.
 
-It returns the next prime number immediately after `from`.
+Returns the next prime number immediately after `from`.
 
 ### **Example usage:**
 ```ts
@@ -102,11 +102,11 @@ expect(getNextPrime(0)).toBe(2)
 ```ts
 function isPowerOfTwo (value: number): boolean
 ```
-It checks whether the `value` given is equal to 2 to the power of n where n is an integer.
+Checks whether the `value` given is equal to 2 to the power of n where n is an integer.
 
 `value`: The value to be checked.
 
-It returns true if the `value` is equal to 2 to the power of n where n is an integer, false otherwise.
+Returns true if the `value` is equal to 2 to the power of n where n is an integer, false otherwise.
 
 ### **Example usage:**
 ```ts
@@ -118,7 +118,7 @@ expect(isPowerOfTwo(1)).toBeTruthy()
 ```ts
 function lerp (t: number, a: number, b: number): number
 ```
-It performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
+Performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
 
 `t`: The time to requset for a linear interpolation result.
 
@@ -126,7 +126,7 @@ It performs a linear interpolation to find a value at time `t` when t = 0, value
 
 `b`: The value when `t` = 1 .
 
-It returns a value at time `t`.
+Returns a value at time `t`.
 
 ### **Example usage:**
 ```ts
@@ -138,7 +138,7 @@ expect(lerp(2, 1, 0)).toBe(-1)
 ```ts
 function lerpVector2 (t: number, a: Vector2, b: Vector2): Vector2
 ```
-It performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
+Performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
 
 `t`: The time to requset for a linear interpolation result.
 
@@ -146,7 +146,7 @@ It performs a linear interpolation to find a value at time `t` when t = 0, value
 
 `b`: The value when `t` = 1 .
 
-It returns A value at time `t`.
+Returns a value at time `t`.
 
 ### **Example usage:**
 ```ts
@@ -158,7 +158,7 @@ expect(lerpVector2(2, new Vector2(2, 1), new Vector2(2, 0))).toEqual(new Vector2
 ```ts
 function lerpVector3 (t: number, a: Vector3, b: Vector3): Vector3
 ```
-It performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
+Performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
 
 `t`: The time to requset for a linear interpolation result.
 
@@ -166,7 +166,7 @@ It performs a linear interpolation to find a value at time `t` when t = 0, value
 
 `b`: The value when `t` = 1 .
 
-It returns A value at time `t`.
+Returns a value at time `t`.
 
 ### **Example usage:**
 ```ts
@@ -178,7 +178,7 @@ expect(lerpVector3(2, new Vector3(2, 2, 1), new Vector3(2, 2, 0))).toEqual(new V
 ```ts
 function lerpVector4 (t: number, a: Vector4, b: Vector4): Vector4
 ```
-It performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
+Performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
 
 `t`: The time to requset for a linear interpolation result.
 
@@ -186,7 +186,7 @@ It performs a linear interpolation to find a value at time `t` when t = 0, value
 
 `b`: The value when `t` = 1 .
 
-It returns a value at time `t`.
+Returns a value at time `t`.
 
 ### **Example usage:**
 ```ts
@@ -196,71 +196,71 @@ expect(lerpVector4(2, new Vector4(2, 2, 2, 1), new Vector4(2, 2, 2, 0))).toEqual
 
 ## **minPositive**
 ```ts
-function minPositive (...values: readonly number[]): { index: number, value: number }
+function minPositive (...values: readonly number[]): { id: number, value: number }
 ```
-It finds a minimum positive value and its associated index from the array given.
+Finds a minimum positive value and its associated index from the array given.
 
 `values`: The array to search from.
 
-It returns a minimum positive value and its associated index from the array given.
+Returns a minimum positive value and its associated index from the array given.
 
 ### **Example usage:**
 ```ts
-expect(minPositive(2, 2, 0)).toEqual({ index: 2, value: 0 })
+expect(minPositive(2, 2, 0)).toEqual({ id: 2, value: 0 })
 ```
 <br />
 
 ## **maxPositive**
 ```ts
-function maxPositive (...values: readonly number[]): { index: number, value: number }
+function maxPositive (...values: readonly number[]): { id: number, value: number }
 ```
-It finds a maximum positive value and its associated index from the array given.
+Finds a maximum positive value and its associated index from the array given.
 
 `values`: The array to search from.
 
-It returns A maximum positive value and its associated index from the array given.
+Returns a maximum positive value and its associated index from the array given.
 
 ### **Example usage:**
 ```ts
-expect(maxPositive(0, 0, 2)).toEqual({ index: 2, value: 2 })
+expect(maxPositive(0, 0, 2)).toEqual({ id: 2, value: 2 })
 ```
 <br />
 
 ## **minNegative**
 ```ts
-function minNegative (...values: readonly number[]): { index: number, value: number }
+function minNegative (...values: readonly number[]): { id: number, value: number }
 ```
-It finds a minimum negative value and its associated index from the array given.
+Finds a minimum negative value and its associated index from the array given.
 
 `values`: The array to search from.
 
-It returns a minimum negative value and its associated index from the array given.
+Returns a minimum negative value and its associated index from the array given.
 
 ### **Example usage:**
 ```ts
-expect(minNegative(-1, -1, -2)).toEqual({ index: 2, value: -2 })
+expect(minNegative(-1, -1, -2)).toEqual({ id: 2, value: -2 })
 ```
 
 ## **maxNegative**
 ```ts
-function maxNegative (...values: readonly number[]): { index: number, value: number }
+function maxNegative (...values: readonly number[]): { id: number, value: number }
 ```
-It finds a maximum negative value and its associated index from the array given.
+Finds a maximum negative value and its associated index from the array given.
 
 `values`: The array to search from.
 
-It returns A maximum negative value and its associated index from the array given.
+Returns a maximum negative value and its associated index from the array given.
 
 ### **Example usage:**
 ```ts
-expect(maxNegative(-3, -3, -1)).toEqual({ index: 2, value: -1 })
+expect(maxNegative(-3, -3, -1)).toEqual({ id: 2, value: -1 })
 ```
 
 ## **linearMap**
 ```ts
 function linearMap (value: number, from: Sequence, to: Sequence): number
 ```
-It linearly maps the `value` from the first sequence given to the second sequence given.
+Linearly maps the `value` from the first sequence given to the second sequence given.
 
 `value`: The value to map from.
 
@@ -268,7 +268,7 @@ It linearly maps the `value` from the first sequence given to the second sequenc
 
 `to`: The sequence that the `value` maps to.
 
-It returns a mapped value that belongs to the second sequence given.
+Returns a mapped value that belongs to the second sequence given.
 
 ### **Example usage:**
 ```ts
@@ -281,7 +281,7 @@ function linearMapVector2 (
   value: Vector2, fromPosition: Vector2, fromSize: Vector2, toPosition: Vector2, toSize: Vector2
 ): Vector2
 ```
-It linearly maps the `value` from the first region given to the second region given.
+Linearly maps the `value` from the first region given to the second region given.
 
 `value`: The value to map from.
 
@@ -293,7 +293,7 @@ It linearly maps the `value` from the first region given to the second region gi
 
 `toSize`: The size of the region that the `value` maps to.
 
-It returns a mapped value that belongs to the second region given.
+Returns a mapped value that belongs to the second region given.
 
 ### **Example usage:**
 ```ts

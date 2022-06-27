@@ -2,20 +2,20 @@
 
 import cluster from 'cluster'
 import { cpus } from 'os'
-import constants from '../any/constants.js'
+import constants from '../any/consts.js'
 
 let keys: string[]
 
 /**
- * It creates as many background workers as the number of CPU cores you have.
+ * Creates as many background workers as the number of CPU cores you have.
  */
 export function spawnWorkers (): void {
   for (let i = 0; i !== cpus().length; ++i) cluster.fork()
 }
 
 /**
- * It creates as many background workers as the number of CPU cores you have. If any background worker is killed for
- * some reasons, then a new background worker will be created to maintain the number of active background workers
+ * Creates as many background workers as the number of CPU cores you have. If any background worker is killed for some
+ * reasons, then a new background worker will be created to maintain the number of active background workers
  * operate in the system.
  */
 export function spawnRevivableWorkers (): void {

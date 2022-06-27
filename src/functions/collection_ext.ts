@@ -6,20 +6,20 @@ import Holder from '../struct/Holder.js'
 import NumbersHashable from '../any/NumbersHashable.js'
 
 /**
- * It exchanges objects that are inside the received `array`.
+ * Exchanges objects that are inside the received `array`.
  *
  * @param array The array that contains objects to be exchanged with each other.
- * @param leftIndex The index which identifies the left object to be moved.
- * @param rightIndex The index which identifies the right object to be moved.
+ * @param leftID The index which identifies the left object to be moved.
+ * @param rightID The index which identifies the right object to be moved.
  */
-export function swapInArray<T> (array: T[], leftIndex: number, rightIndex: number): void {
-  const left = requireDefined(array[leftIndex])
-  array[leftIndex] = requireDefined(array[rightIndex])
-  array[rightIndex] = left
+export function swapInArray<T> (array: T[], leftID: number, rightID: number): void {
+  const left = requireDefined(array[leftID])
+  array[leftID] = requireDefined(array[rightID])
+  array[rightID] = left
 }
 
 /**
- * It copy the whole contents of the `srcArray` into the `destArray`.
+ * Copy the whole contents of the `srcArray` into the `destArray`.
  *
  * @param srcArray The array to copy from.
  * @param destArray The array to copy into.
@@ -29,7 +29,7 @@ export function copy<T> (srcArray: T[], destArray: T[]): void {
 }
 
 /**
- * It sorts a portion of the array `received` by using insertion sort.
+ * Sorts a portion of the array `received` by using insertion sort.
  *
  * @param array The array to be sorted from.
  * @param indices The indices specify the portion of the `array` where the elements inside it will become sorted.
@@ -41,8 +41,8 @@ export function insertionSort<T> (
   indices: Bound = new Bound(0, Number.MAX_SAFE_INTEGER),
   compare: (left: T, right: T) => boolean = (left, right) => left > right
 ): void {
-  const maxIndex = Math.min(indices.max, array.length - 1)
-  for (let i = indices.min + 1; i <= maxIndex; ++i) {
+  const maxID = Math.min(indices.max, array.length - 1)
+  for (let i = indices.min + 1; i <= maxID; ++i) {
     for (let j = i; j > indices.min; --j) {
       if (compare(requireDefined(array[j - 1]), requireDefined(array[j]))) swapInArray(array, j - 1, j)
       else break
@@ -51,7 +51,7 @@ export function insertionSort<T> (
 }
 
 /**
- * It sorts the `array` received into a sequence of sorted runs by using insertion sort. A run is a number of
+ * Sorts the `array` received into a sequence of sorted runs by using insertion sort. A run is a number of
  * consecutive elements which is a part of the `array`.
  *
  * @param array The array to be sorted from.
@@ -68,7 +68,7 @@ export function insertionSorts<T> (
 }
 
 /**
- * It sorts the `array` received by using merge sort and assuming that there is a sequence of sorted runs in the
+ * Sorts the `array` received by using merge sort and assuming that there is a sequence of sorted runs in the
  * `array`. Each sorted run has `sortedRunSize` consecutive elements which is a part of the `array`.
  *
  * @param array The array to be sorted from.
@@ -113,7 +113,7 @@ export function mergeSort<T> (
 }
 
 /**
- * It sorts the `array` received by using tim sort.
+ * Sorts the `array` received by using tim sort.
  *
  * @param array The array to be sorted from.
  * @param compare The function used to determine whether the positions of both elements should be swapped during
@@ -126,14 +126,14 @@ export function sort<T> (array: T[], compare: (left: T, right: T) => boolean = (
 }
 
 /**
- * It find the minimum objects from the `array` received determined by the value retrieved from each object in the
+ * Find the minimum objects from the `array` received determined by the value retrieved from each object in the
  * `array` through the `getValue` function given.
  *
  * @param array The array to be searched from.
  * @param getValue The function that retrieves a value from the object in the `array`.
  * @returns The minimum objects.
  */
-export function min<T> (array: T[], getValue: (object: T, index: number) => number): T[] {
+export function min<T> (array: T[], getValue: (object: T, id: number) => number): T[] {
   let minValue = Infinity
   let result: T[] = []
   for (let i = 0; i !== array.length; ++i) {
@@ -150,14 +150,14 @@ export function min<T> (array: T[], getValue: (object: T, index: number) => numb
 }
 
 /**
- * It find the maximum objects from the `array` received determined by the value retrieved from each object in the
+ * Find the maximum objects from the `array` received determined by the value retrieved from each object in the
  * `array` through the `getValue` function given.
  *
  * @param array The array to be searched from.
  * @param getValue The function that retrieves a value from the object in the `array`.
  * @returns The maximum objects.
  */
-export function max<T> (array: T[], getValue: (object: T, index: number) => number): T[] {
+export function max<T> (array: T[], getValue: (object: T, id: number) => number): T[] {
   let maxValue = -Infinity
   let result: T[] = []
   for (let i = 0; i !== array.length; ++i) {
@@ -174,7 +174,7 @@ export function max<T> (array: T[], getValue: (object: T, index: number) => numb
 }
 
 /**
- * It converts the `map` given which may have duplicate objects into an array without duplicates.
+ * Converts the `map` given which may have duplicate objects into an array without duplicates.
  *
  * @param map The map to be converted from.
  * @returns An array without duplicates.
@@ -193,7 +193,7 @@ export function toArray<T extends NumbersHashable> (map: { [key: string]: T[] })
 }
 
 /**
- * It converts the `array` given without duplicate objects into a map with duplicates.
+ * Converts the `array` given without duplicate objects into a map with duplicates.
  *
  * @param array The array to be converted from.
  * @returns A map with duplicates.
@@ -211,7 +211,7 @@ export function toMap<T extends NumbersHashable> (array: T[]): { [key: string]: 
 }
 
 /**
- * It concatenates two maps received that may have duplicate objects into a map which contains duplicates.
+ * Concatenates two maps received that may have duplicate objects into a map which contains duplicates.
  *
  * @param am The first map to include.
  * @param bm The second map to include.
@@ -242,7 +242,7 @@ export function add<T extends NumbersHashable> (
 }
 
 /**
- * It removes objects from the first map where they exist in the second map and returns it.
+ * Removes objects from the first map where they exist in the second map and returns it.
  *
  * @param am The map to remove objects from.
  * @param bm The map which contains the objects to be searched from the first map for removal.

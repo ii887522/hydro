@@ -1,5 +1,5 @@
 # DynamicUint8Array
-It is an array that contains many integers between 0 and 255 (inclusive). It will automatically resize itself when there is not enough space to hold more integers requested. The index of the array starts from 0 for the first integer until `size - 1` for the last integer.
+An array that contains many integers between 0 and 255 (inclusive). It will automatically resize itself when there is not enough space to hold more integers requested. The index of the array starts from 0 for the first integer until `size - 1` for the last integer.
 
 ## Table of contents
 - [get size](https://github.com/ii887522/hydro/blob/master/docs/collection/DynamicUint8Array.md#get-size)
@@ -34,7 +34,7 @@ expect(equal(array.get(), new Uint8Array())).toBeTruthy()
 ```ts
 DynamicUint8Array.add (array: ArrayLike<number>): void
 ```
-It appends `array` received to itself.
+Appends `array` received to itself.
 
 `array`: The array to be inserted at the end.
 

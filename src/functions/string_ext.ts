@@ -1,7 +1,7 @@
 'use strict'
 
 /**
- * It returns a substring from the original string received which starts from the start text given and ends with a text
+ * Returns a substring from the original string received which starts from the start text given and ends with a text
  * which immediately precedes the end text given.
  *
  * @param from The original string given.
@@ -10,12 +10,12 @@
  * @returns The substring requested.
  */
 export function substring (from: string, startText: string, endText: string): string {
-  const startTextIndex = from.indexOf(startText)
-  return from.substring(startTextIndex, from.indexOf(endText, startTextIndex))
+  const startTextID = from.indexOf(startText)
+  return from.substring(startTextID, from.indexOf(endText, startTextID))
 }
 
 /**
- * It checks whether the `value` given is actually an unsigned integer which is converted to a string.
+ * Checks whether the `value` given is actually an unsigned integer which is converted to a string.
  *
  * @param value The value to be checked.
  * @returns true if the `value` is an unsigned integer which is converted to a string, false otherwise.

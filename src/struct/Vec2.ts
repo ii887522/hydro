@@ -1,16 +1,16 @@
 'use strict'
 
-export default class Vector2 {
+export default class Vec2 {
   private _length = 0
   private isLengthValid = false
 
   constructor (private _x: number = 0, private _y: number = 0) { } // eslint-disable-line no-useless-constructor
 
-  static fromVector2 (that: Vector2): Vector2 {
+  static fromVec2 (that: Vec2): Vec2 {
     return new this(that.x, that.y)
   }
 
-  static fromValue (value: number): Vector2 {
+  static fromValue (value: number): Vec2 {
     return new this(value, value)
   }
 
@@ -24,8 +24,8 @@ export default class Vector2 {
     this.isLengthValid = false
   }
 
-  withX (value: number): Vector2 {
-    return new Vector2(value, this.y)
+  withX (value: number): Vec2 {
+    return new Vec2(value, this.y)
   }
 
   get y (): number {
@@ -38,42 +38,42 @@ export default class Vector2 {
     this.isLengthValid = false
   }
 
-  withY (value: number): Vector2 {
-    return new Vector2(this.x, value)
+  withY (value: number): Vec2 {
+    return new Vec2(this.x, value)
   }
 
-  plus (that: Vector2): Vector2 {
-    return new Vector2(this.x + that.x, this.y + that.y)
+  plus (that: Vec2): Vec2 {
+    return new Vec2(this.x + that.x, this.y + that.y)
   }
 
-  minus (that: Vector2): Vector2 {
-    return new Vector2(this.x - that.x, this.y - that.y)
+  minus (that: Vec2): Vec2 {
+    return new Vec2(this.x - that.x, this.y - that.y)
   }
 
-  times (value: number): Vector2 {
-    return new Vector2(this.x * value, this.y * value)
+  times (value: number): Vec2 {
+    return new Vec2(this.x * value, this.y * value)
   }
 
-  divide (value: number): Vector2 {
-    return new Vector2(this.x / value, this.y / value)
+  divide (value: number): Vec2 {
+    return new Vec2(this.x / value, this.y / value)
   }
 
-  assign (that: Vector2): void {
+  assign (that: Vec2): void {
     if (this.isEqual(that)) return
     this.x = that.x
     this.y = that.y
     this.isLengthValid = false
   }
 
-  plusAssign (that: Vector2): void {
-    if (that.isEqual(new Vector2())) return
+  plusAssign (that: Vec2): void {
+    if (that.isEqual(new Vec2())) return
     this.x += that.x
     this.y += that.y
     this.isLengthValid = false
   }
 
-  minusAssign (that: Vector2): void {
-    if (that.isEqual(new Vector2())) return
+  minusAssign (that: Vec2): void {
+    if (that.isEqual(new Vec2())) return
     this.x -= that.x
     this.y -= that.y
     this.isLengthValid = false
@@ -93,11 +93,11 @@ export default class Vector2 {
     this.isLengthValid = false
   }
 
-  isEqual (that: Vector2): boolean {
+  isEqual (that: Vec2): boolean {
     return this.x === that.x && this.y === that.y
   }
 
-  isNotEqual (that: Vector2): boolean {
+  isNotEqual (that: Vec2): boolean {
     return this.x !== that.x || this.y !== that.y
   }
 
@@ -113,20 +113,20 @@ export default class Vector2 {
     return result
   }
 
-  get normalized (): Vector2 {
+  get normalized (): Vec2 {
     return this.divide(this.length)
   }
 
-  get xFliped (): Vector2 {
-    return new Vector2(-this.x, this.y)
+  get xFliped (): Vec2 {
+    return new Vec2(-this.x, this.y)
   }
 
-  get yFliped (): Vector2 {
-    return new Vector2(this.x, -this.y)
+  get yFliped (): Vec2 {
+    return new Vec2(this.x, -this.y)
   }
 
-  get fliped (): Vector2 {
-    return new Vector2(-this.x, -this.y)
+  get fliped (): Vec2 {
+    return new Vec2(-this.x, -this.y)
   }
 
   toString (): string {

@@ -1,9 +1,9 @@
 'use strict'
 
-import Sequence from './Sequence.js'
+import Seq from './Seq.js'
 
 /**
- * It defines a boundary between the minimum and maximum value.
+ * Defines a boundary between the minimum and maximum value.
  */
 export default class Bound {
   min: number
@@ -23,7 +23,7 @@ export default class Bound {
   }
 
   /**
-   * It checks whether the boundary received overlaps with this boundary.
+   * Checks whether the boundary received overlaps with this boundary.
    *
    * @param that The boundary to be checked with.
    * @returns true if both boundaries overlaps, false otherwise.
@@ -33,7 +33,7 @@ export default class Bound {
   }
 
   /**
-   * It finds out the intersection between both boundaries received as a boundary.
+   * Finds out the intersection between both boundaries received as a boundary.
    *
    * @param that The boundary to intersect with.
    * @returns An intersection as a boundary if exist.
@@ -43,7 +43,7 @@ export default class Bound {
   }
 
   /**
-   * It constrains the `value` given in this boundary and returns the result.
+   * Constrains the `value` given in this boundary and returns the result.
    *
    * @param value The value to be constrained.
    * @returns The constrained value.
@@ -53,7 +53,7 @@ export default class Bound {
   }
 
   /**
-   * It returns a random value in this boundary.
+   * Returns a random value in this boundary.
    *
    * @returns A random value in this boundary.
    */
@@ -62,11 +62,11 @@ export default class Bound {
   }
 
   /**
-   * It treats this boundary as a sequence.
+   * Treats this boundary as a sequence.
    *
    * @returns A sequence that represents this boundary.
    */
-  toSequence (): Sequence {
-    return new Sequence(this.min, this.max)
+  toSequence (): Seq {
+    return new Seq(this.min, this.max)
   }
 }

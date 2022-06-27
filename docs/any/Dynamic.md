@@ -1,5 +1,5 @@
 # Dynamic
-It is a value holder that keeps changing its value by the `interval` given. Users of this class must keep calling `step(dt)` method to simulate frequently changing value.
+A value holder that keeps changing its value by the `interval` given. Users of this class must keep calling `step(dt)` method to simulate frequently changing value.
 
 ## Table of contents
 - [get value](https://github.com/ii887522/hydro/blob/master/docs/any/Dynamic.md#get-value)
@@ -25,7 +25,7 @@ expect(dynamicValue.value).toBe(1)
 ```ts
 step (dt: number): void
 ```
-It advances the time being tracked by the given `dt` for simulating frequently changing value.
+Advances the time being tracked by the given `dt` for simulating frequently changing value.
 
 `dt`: Some small amount of time to advance.
 

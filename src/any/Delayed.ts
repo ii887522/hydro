@@ -1,8 +1,8 @@
 'use strict'
 
 /**
- * It is a value holder that allows new value to be assigned in the future by the `timeout` given. Users of this class
- * must keep calling `step(dt)` method to simulate delayed assignment of new value.
+ * A value holder that allows new value to be assigned in the future by the `timeout` given. Users of this class must
+ * keep calling `step(dt)` method to simulate delayed assignment of new value.
  */
 export default class Delayed<T> {
   private t = 0
@@ -30,7 +30,7 @@ export default class Delayed<T> {
   }
 
   /**
-   * It advances the time being tracked by the given `dt` for simulating delayed assignment of new value.
+   * Advances the time being tracked by the given `dt` for simulating delayed assignment of new value.
    *
    * @param dt Some small amount of time to advance.
    */

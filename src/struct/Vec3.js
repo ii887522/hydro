@@ -1,5 +1,5 @@
 'use strict';
-export default class Vector3 {
+export default class Vec3 {
     constructor(_x = 0, _y = 0, _z = 0) {
         this._x = _x;
         this._y = _y;
@@ -7,7 +7,7 @@ export default class Vector3 {
         this._length = 0;
         this.isLengthValid = false;
     }
-    static fromVector3(that) {
+    static fromVec3(that) {
         return new this(that.x, that.y, that.z);
     }
     static fromValue(value) {
@@ -23,7 +23,7 @@ export default class Vector3 {
         this.isLengthValid = false;
     }
     withX(value) {
-        return new Vector3(value, this.y, this.z);
+        return new Vec3(value, this.y, this.z);
     }
     get y() {
         return this._y;
@@ -35,7 +35,7 @@ export default class Vector3 {
         this.isLengthValid = false;
     }
     withY(value) {
-        return new Vector3(this.x, value, this.z);
+        return new Vec3(this.x, value, this.z);
     }
     get z() {
         return this._z;
@@ -47,19 +47,19 @@ export default class Vector3 {
         this.isLengthValid = false;
     }
     withZ(value) {
-        return new Vector3(this.x, this.y, value);
+        return new Vec3(this.x, this.y, value);
     }
     plus(that) {
-        return new Vector3(this.x + that.x, this.y + that.y, this.z + that.z);
+        return new Vec3(this.x + that.x, this.y + that.y, this.z + that.z);
     }
     minus(that) {
-        return new Vector3(this.x - that.x, this.y - that.y, this.z - that.z);
+        return new Vec3(this.x - that.x, this.y - that.y, this.z - that.z);
     }
     times(value) {
-        return new Vector3(this.x * value, this.y * value, this.z * value);
+        return new Vec3(this.x * value, this.y * value, this.z * value);
     }
     divide(value) {
-        return new Vector3(this.x / value, this.y / value, this.z / value);
+        return new Vec3(this.x / value, this.y / value, this.z / value);
     }
     assign(that) {
         if (this.isEqual(that))
@@ -70,7 +70,7 @@ export default class Vector3 {
         this.isLengthValid = false;
     }
     plusAssign(that) {
-        if (that.isEqual(new Vector3()))
+        if (that.isEqual(new Vec3()))
             return;
         this.x += that.x;
         this.y += that.y;
@@ -78,7 +78,7 @@ export default class Vector3 {
         this.isLengthValid = false;
     }
     minusAssign(that) {
-        if (that.isEqual(new Vector3()))
+        if (that.isEqual(new Vec3()))
             return;
         this.x -= that.x;
         this.y -= that.y;
@@ -122,16 +122,16 @@ export default class Vector3 {
         return this.divide(this.length);
     }
     get xFliped() {
-        return new Vector3(-this.x, this.y, this.z);
+        return new Vec3(-this.x, this.y, this.z);
     }
     get yFliped() {
-        return new Vector3(this.x, -this.y, this.z);
+        return new Vec3(this.x, -this.y, this.z);
     }
     get zFliped() {
-        return new Vector3(this.x, this.y, -this.z);
+        return new Vec3(this.x, this.y, -this.z);
     }
     get fliped() {
-        return new Vector3(-this.x, -this.y, -this.z);
+        return new Vec3(-this.x, -this.y, -this.z);
     }
     toString() {
         return `${this.x},${this.y},${this.z}`;

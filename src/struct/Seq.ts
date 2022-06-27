@@ -3,9 +3,9 @@
 import Bound from './Bound.js'
 
 /**
- * It defines a sequence between two values.
+ * Defines a sequence between two values.
  */
-export default class Sequence {
+export default class Seq {
   /**
    * @param a The first value
    * @param b The second value
@@ -13,7 +13,7 @@ export default class Sequence {
   constructor (public a: number = 0, public b: number = 0) { } // eslint-disable-line no-useless-constructor
 
   /**
-   * It maps the `value` given in this sequence to a value between 0 and 1.
+   * Maps the `value` given in this sequence to a value between 0 and 1.
    *
    * @param value The value to map from.
    * @returns A value between 0 and 1.
@@ -23,7 +23,7 @@ export default class Sequence {
   }
 
   /**
-   * It maps the `value` given between 0 and 1 to a value belongs to this sequence.
+   * Maps the `value` given between 0 and 1 to a value belongs to this sequence.
    *
    * @param value The value to map from.
    * @returns A value belongs to this sequence.
@@ -33,7 +33,7 @@ export default class Sequence {
   }
 
   /**
-   * It treats this sequence as a boundary.
+   * Treats this sequence as a boundary.
    *
    * @returns A boundary that represents this sequence.
    */

@@ -1,5 +1,5 @@
 # Late
-It is a holder that allows late initialization of the value being held.
+A holder that allows late initialization of the value being held.
 
 ## Table of contents
 - [get value](https://github.com/ii887522/hydro/blob/master/docs/any/Late.md#get-value)

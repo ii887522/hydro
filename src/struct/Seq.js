@@ -1,6 +1,6 @@
 'use strict';
-import Bound from './Bound';
-export default class Sequence {
+import Bound from './Bound.js';
+export default class Seq {
     constructor(a = 0, b = 0) {
         this.a = a;
         this.b = b;

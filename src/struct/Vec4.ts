@@ -1,17 +1,17 @@
 'use strict'
 
-export default class Vector4 {
+export default class Vec4 {
   private _length = 0
   private isLengthValid = false
 
   // eslint-disable-next-line no-useless-constructor
   constructor (private _x: number = 0, private _y: number = 0, private _z: number = 0, private _w: number = 0) { }
 
-  static fromVector4 (that: Vector4): Vector4 {
+  static fromVec4 (that: Vec4): Vec4 {
     return new this(that.x, that.y, that.z, that.w)
   }
 
-  static fromValue (value: number): Vector4 {
+  static fromValue (value: number): Vec4 {
     return new this(value, value, value, value)
   }
 
@@ -25,8 +25,8 @@ export default class Vector4 {
     this.isLengthValid = false
   }
 
-  withX (value: number): Vector4 {
-    return new Vector4(value, this.y, this.z, this.w)
+  withX (value: number): Vec4 {
+    return new Vec4(value, this.y, this.z, this.w)
   }
 
   get y (): number {
@@ -39,8 +39,8 @@ export default class Vector4 {
     this.isLengthValid = false
   }
 
-  withY (value: number): Vector4 {
-    return new Vector4(this.x, value, this.z, this.w)
+  withY (value: number): Vec4 {
+    return new Vec4(this.x, value, this.z, this.w)
   }
 
   get z (): number {
@@ -53,8 +53,8 @@ export default class Vector4 {
     this.isLengthValid = false
   }
 
-  withZ (value: number): Vector4 {
-    return new Vector4(this.x, this.y, value, this.w)
+  withZ (value: number): Vec4 {
+    return new Vec4(this.x, this.y, value, this.w)
   }
 
   get w (): number {
@@ -67,27 +67,27 @@ export default class Vector4 {
     this.isLengthValid = false
   }
 
-  withW (value: number): Vector4 {
-    return new Vector4(this.x, this.y, this.z, value)
+  withW (value: number): Vec4 {
+    return new Vec4(this.x, this.y, this.z, value)
   }
 
-  plus (that: Vector4): Vector4 {
-    return new Vector4(this.x + that.x, this.y + that.y, this.z + that.z, this.w + that.w)
+  plus (that: Vec4): Vec4 {
+    return new Vec4(this.x + that.x, this.y + that.y, this.z + that.z, this.w + that.w)
   }
 
-  minus (that: Vector4): Vector4 {
-    return new Vector4(this.x - that.x, this.y - that.y, this.z - that.z, this.w - that.w)
+  minus (that: Vec4): Vec4 {
+    return new Vec4(this.x - that.x, this.y - that.y, this.z - that.z, this.w - that.w)
   }
 
-  times (value: number): Vector4 {
-    return new Vector4(this.x * value, this.y * value, this.z * value, this.w * value)
+  times (value: number): Vec4 {
+    return new Vec4(this.x * value, this.y * value, this.z * value, this.w * value)
   }
 
-  divide (value: number): Vector4 {
-    return new Vector4(this.x / value, this.y / value, this.z / value, this.w / value)
+  divide (value: number): Vec4 {
+    return new Vec4(this.x / value, this.y / value, this.z / value, this.w / value)
   }
 
-  assign (that: Vector4): void {
+  assign (that: Vec4): void {
     if (this.isEqual(that)) return
     this.x = that.x
     this.y = that.y
@@ -96,8 +96,8 @@ export default class Vector4 {
     this.isLengthValid = false
   }
 
-  plusAssign (that: Vector4): void {
-    if (that.isEqual(new Vector4())) return
+  plusAssign (that: Vec4): void {
+    if (that.isEqual(new Vec4())) return
     this.x += that.x
     this.y += that.y
     this.z += that.z
@@ -105,8 +105,8 @@ export default class Vector4 {
     this.isLengthValid = false
   }
 
-  minusAssign (that: Vector4): void {
-    if (that.isEqual(new Vector4())) return
+  minusAssign (that: Vec4): void {
+    if (that.isEqual(new Vec4())) return
     this.x -= that.x
     this.y -= that.y
     this.z -= that.z
@@ -132,11 +132,11 @@ export default class Vector4 {
     this.isLengthValid = false
   }
 
-  isEqual (that: Vector4): boolean {
+  isEqual (that: Vec4): boolean {
     return this.x === that.x && this.y === that.y && this.z === that.z && this.w === that.w
   }
 
-  isNotEqual (that: Vector4): boolean {
+  isNotEqual (that: Vec4): boolean {
     return this.x !== that.x || this.y !== that.y || this.z !== that.z || this.w !== that.w
   }
 
@@ -152,28 +152,28 @@ export default class Vector4 {
     return result
   }
 
-  get normalized (): Vector4 {
+  get normalized (): Vec4 {
     return this.divide(this.length)
   }
 
-  get xFliped (): Vector4 {
-    return new Vector4(-this.x, this.y, this.z, this.w)
+  get xFliped (): Vec4 {
+    return new Vec4(-this.x, this.y, this.z, this.w)
   }
 
-  get yFliped (): Vector4 {
-    return new Vector4(this.x, -this.y, this.z, this.w)
+  get yFliped (): Vec4 {
+    return new Vec4(this.x, -this.y, this.z, this.w)
   }
 
-  get zFliped (): Vector4 {
-    return new Vector4(this.x, this.y, -this.z, this.w)
+  get zFliped (): Vec4 {
+    return new Vec4(this.x, this.y, -this.z, this.w)
   }
 
-  get wFliped (): Vector4 {
-    return new Vector4(this.x, this.y, this.z, -this.w)
+  get wFliped (): Vec4 {
+    return new Vec4(this.x, this.y, this.z, -this.w)
   }
 
-  get fliped (): Vector4 {
-    return new Vector4(-this.x, -this.y, -this.z, -this.w)
+  get fliped (): Vec4 {
+    return new Vec4(-this.x, -this.y, -this.z, -this.w)
   }
 
   toString (): string {
