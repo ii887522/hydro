@@ -4,11 +4,11 @@ import Seq from '../../../src/struct/Seq.js'
 import Bound from '../../../src/struct/Bound.js'
 
 test('Bound::middle', () => {
-  expect(new Bound(0, 0).middle).toBe(0)
-  expect(new Bound(0, 1).middle).toBe(0.5)
-  expect(new Bound(0, 2).middle).toBe(1)
-  expect(new Bound(1, 2).middle).toBe(1.5)
-  expect(new Bound(2, 2).middle).toBe(2)
+  expect(new Bound(0, 0).mid).toBe(0)
+  expect(new Bound(0, 1).mid).toBe(0.5)
+  expect(new Bound(0, 2).mid).toBe(1)
+  expect(new Bound(1, 2).mid).toBe(1.5)
+  expect(new Bound(2, 2).mid).toBe(2)
 })
 
 test('Bound::isIntersect', () => {
@@ -60,9 +60,9 @@ test('Bound::random', () => {
 })
 
 test('Bound::toSequence', () => {
-  expect(new Bound(0, 0).toSequence()).toEqual(new Seq(0, 0))
-  expect(new Bound(0, 1).toSequence()).toEqual(new Seq(0, 1))
-  expect(new Bound(0, 2).toSequence()).toEqual(new Seq(0, 2))
-  expect(new Bound(1, 2).toSequence()).toEqual(new Seq(1, 2))
-  expect(new Bound(2, 2).toSequence()).toEqual(new Seq(2, 2))
+  expect(new Bound(0, 0).toSeq()).toEqual(new Seq(0, 0))
+  expect(new Bound(0, 1).toSeq()).toEqual(new Seq(0, 1))
+  expect(new Bound(0, 2).toSeq()).toEqual(new Seq(0, 2))
+  expect(new Bound(1, 2).toSeq()).toEqual(new Seq(1, 2))
+  expect(new Bound(2, 2).toSeq()).toEqual(new Seq(2, 2))
 })

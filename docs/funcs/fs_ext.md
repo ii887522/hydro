@@ -4,7 +4,7 @@
 - [emptyDir](https://github.com/ii887522/hydro/blob/master/docs/funcs/fs_ext.md#emptyDir)
 - [removeFiles](https://github.com/ii887522/hydro/blob/master/docs/funcs/fs_ext.md#removeFiles)
 - [getFileName](https://github.com/ii887522/hydro/blob/master/docs/funcs/fs_ext.md#getFileName)
-- [hasFileWithExtension](https://github.com/ii887522/hydro/blob/master/docs/funcs/fs_ext.md#hasFileWithExtension)
+- [hasFileWithExt](https://github.com/ii887522/hydro/blob/master/docs/funcs/fs_ext.md#hasFileWithExt)
 - [readObject](https://github.com/ii887522/hydro/blob/master/docs/funcs/fs_ext.md#readObject)
 - [writeObject](https://github.com/ii887522/hydro/blob/master/docs/funcs/fs_ext.md#writeObject)
 
@@ -24,11 +24,11 @@ emptyDir('path/to/dir')
 
 ## **removeFiles**
 ```ts
-async function removeFiles (extensionName: string, dirPath: string): Promise<void>
+async function removeFiles (extName: string, dirPath: string): Promise<void>
 ```
 Removes all files in the directory where its path is received from its parameter with matching extension name received.
 
-`extensionName`: Files where its file name contains the extension name will be removed. The name must not starts with .
+`extName`: Files where its file name contains the extension name will be removed. The name must not starts with .
 
 `dirPath`: The path where the directory is to be focused on. The path must not ends with /
 
@@ -52,9 +52,9 @@ expect(getFileName('SDL2-2.0.12/lib/x86/SDL2.dll')).toBe('SDL2.dll')
 ```
 <br />
 
-## **hasFileWithExtension**
+## **hasFileWithExt**
 ```ts
-async function hasFileWithExtension (extensionName: string, dirPath: string): Promise<boolean>
+async function hasFileWithExt (extName: string, dirPath: string): Promise<boolean>
 ```
 Checks whether the directory path given has at least one file with an extension name that is received from the parameter.
 
@@ -66,7 +66,7 @@ Returns true if there is at least one file with an extension name that is coming
 
 ### **Example usage:**
 ```ts
-expect(await hasFileWithExtension('txt', 'test/res/a')).toBeFalsy()
+expect(await hasFileWithExt('txt', 'test/res/a')).toBeFalsy()
 ```
 
 ## **readObject**

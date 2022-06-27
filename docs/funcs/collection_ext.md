@@ -58,7 +58,7 @@ expect(rightArray).toEqual([0])
 ```ts
 function insertionSort<T> (
   array: T[],
-  indices: Range = new Range(0, Number.MAX_SAFE_INTEGER),
+  ids: Range = new Range(0, Number.MAX_SAFE_INTEGER),
   compare: (left: T, right: T) => boolean = (left, right) => left > right
 ): void
 ```
@@ -66,7 +66,7 @@ Sorts a portion of the array `received` by using insertion sort.
 
 `array`: The array to be sorted from.
 
-`indices`: The indices specify the portion of the `array` where the elements inside it will become sorted.
+`ids`: The indices specify the portion of the `array` where the elements inside it will become sorted.
 
 `compare`: The function used to determine whether the positions of both elements should be swapped during sorting. If the function returns true, both elements will be swapped, otherwise nothing happens.
 

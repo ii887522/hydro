@@ -1,27 +1,27 @@
 'use strict';
-import { getFileName, hasFileWithExtension, readObject, writeObject } from '../../../src/funcs/fs_ext.js';
+import { getFileName, hasFileWithExt, readObject, writeObject } from '../../../src/funcs/fs_ext.js';
 test('getFileName', () => {
     expect(getFileName('SDL2-2.0.12/lib/x86/SDL2.dll')).toBe('SDL2.dll');
     expect(getFileName('SDL2_image-2.0.5/lib/x86/libpng16-16.dll')).toBe('libpng16-16.dll');
     expect(getFileName('SDL2_ttf-2.0.15/lib/x86/SDL2_ttf.dll')).toBe('SDL2_ttf.dll');
 });
 test('hasFileWithExtension', async () => {
-    expect(await hasFileWithExtension('txt', 'test/res/a')).toBeFalsy();
-    expect(await hasFileWithExtension('txt', 'test/res/c')).toBeTruthy();
-    expect(await hasFileWithExtension('txt', 'test/res/d')).toBeFalsy();
-    expect(await hasFileWithExtension('txt', 'test/res/e')).toBeTruthy();
-    expect(await hasFileWithExtension('txt', 'test/res/f')).toBeTruthy();
-    expect(await hasFileWithExtension('txt', 'test/res/g')).toBeFalsy();
-    expect(await hasFileWithExtension('txt', 'test/res/h')).toBeTruthy();
-    expect(await hasFileWithExtension('txt', 'test/res/i')).toBeTruthy();
-    expect(await hasFileWithExtension('png', 'test/res/a')).toBeFalsy();
-    expect(await hasFileWithExtension('png', 'test/res/c')).toBeFalsy();
-    expect(await hasFileWithExtension('png', 'test/res/d')).toBeTruthy();
-    expect(await hasFileWithExtension('png', 'test/res/e')).toBeTruthy();
-    expect(await hasFileWithExtension('png', 'test/res/f')).toBeFalsy();
-    expect(await hasFileWithExtension('png', 'test/res/g')).toBeTruthy();
-    expect(await hasFileWithExtension('png', 'test/res/h')).toBeTruthy();
-    expect(await hasFileWithExtension('png', 'test/res/i')).toBeFalsy();
+    expect(await hasFileWithExt('txt', 'test/res/a')).toBeFalsy();
+    expect(await hasFileWithExt('txt', 'test/res/c')).toBeTruthy();
+    expect(await hasFileWithExt('txt', 'test/res/d')).toBeFalsy();
+    expect(await hasFileWithExt('txt', 'test/res/e')).toBeTruthy();
+    expect(await hasFileWithExt('txt', 'test/res/f')).toBeTruthy();
+    expect(await hasFileWithExt('txt', 'test/res/g')).toBeFalsy();
+    expect(await hasFileWithExt('txt', 'test/res/h')).toBeTruthy();
+    expect(await hasFileWithExt('txt', 'test/res/i')).toBeTruthy();
+    expect(await hasFileWithExt('png', 'test/res/a')).toBeFalsy();
+    expect(await hasFileWithExt('png', 'test/res/c')).toBeFalsy();
+    expect(await hasFileWithExt('png', 'test/res/d')).toBeTruthy();
+    expect(await hasFileWithExt('png', 'test/res/e')).toBeTruthy();
+    expect(await hasFileWithExt('png', 'test/res/f')).toBeFalsy();
+    expect(await hasFileWithExt('png', 'test/res/g')).toBeTruthy();
+    expect(await hasFileWithExt('png', 'test/res/h')).toBeTruthy();
+    expect(await hasFileWithExt('png', 'test/res/i')).toBeFalsy();
 });
 test('read an object from a non-existent file path', () => {
     try {

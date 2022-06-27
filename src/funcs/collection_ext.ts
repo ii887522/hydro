@@ -32,18 +32,18 @@ export function copy<T> (srcArray: T[], destArray: T[]): void {
  * Sorts a portion of the array `received` by using insertion sort.
  *
  * @param array The array to be sorted from.
- * @param indices The indices specify the portion of the `array` where the elements inside it will become sorted.
+ * @param ids The indices specify the portion of the `array` where the elements inside it will become sorted.
  * @param compare The function used to determine whether the positions of both elements should be swapped during
  *   sorting. If the function returns true, both elements will be swapped, otherwise nothing happens.
  */
 export function insertionSort<T> (
   array: T[],
-  indices: Bound = new Bound(0, Number.MAX_SAFE_INTEGER),
+  ids: Bound = new Bound(0, Number.MAX_SAFE_INTEGER),
   compare: (left: T, right: T) => boolean = (left, right) => left > right
 ): void {
-  const maxID = Math.min(indices.max, array.length - 1)
-  for (let i = indices.min + 1; i <= maxID; ++i) {
-    for (let j = i; j > indices.min; --j) {
+  const maxID = Math.min(ids.max, array.length - 1)
+  for (let i = ids.min + 1; i <= maxID; ++i) {
+    for (let j = i; j > ids.min; --j) {
       if (compare(requireDefined(array[j - 1]), requireDefined(array[j]))) swapInArray(array, j - 1, j)
       else break
     }

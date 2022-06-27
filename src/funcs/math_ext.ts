@@ -8,11 +8,11 @@ import Vec4 from '../struct/Vec4.js'
 /**
  * Converts nanoseconds into seconds.
  *
- * @param nanoseconds The value to be converted.
+ * @param nanosec The value to be converted.
  * @returns The received value in terms of seconds.
  */
-export function toSeconds (nanoseconds: number): number {
-  return nanoseconds * 1e-9
+export function toSec (nanosec: number): number {
+  return nanosec * 1e-9
 }
 
 /**
@@ -74,7 +74,7 @@ export function getNextPrime (from: number): number {
  * @param value The value to be checked.
  * @returns true if the `value` is equal to 2 to the power of n where n is an integer, false otherwise.
  */
-export function isPowerOfTwo (value: number): boolean {
+export function isPowOf2 (value: number): boolean {
   const power = Math.log2(value)
   return power === Math.floor(power)
 }
@@ -99,7 +99,7 @@ export function lerp (t: number, a: number, b: number): number {
  * @param b The value when `t` = 1 .
  * @returns A value at time `t`.
  */
-export function lerpVector2 (t: number, a: Vec2, b: Vec2): Vec2 {
+export function lerpVec2 (t: number, a: Vec2, b: Vec2): Vec2 {
   return new Vec2(lerp(t, a.x, b.x), lerp(t, a.y, b.y))
 }
 
@@ -111,7 +111,7 @@ export function lerpVector2 (t: number, a: Vec2, b: Vec2): Vec2 {
  * @param b The value when `t` = 1 .
  * @returns A value at time `t`.
  */
-export function lerpVector3 (t: number, a: Vec3, b: Vec3): Vec3 {
+export function lerpVec3 (t: number, a: Vec3, b: Vec3): Vec3 {
   return new Vec3(lerp(t, a.x, b.x), lerp(t, a.y, b.y), lerp(t, a.z, b.z))
 }
 
@@ -123,7 +123,7 @@ export function lerpVector3 (t: number, a: Vec3, b: Vec3): Vec3 {
  * @param b The value when `t` = 1 .
  * @returns A value at time `t`.
  */
-export function lerpVector4 (t: number, a: Vec4, b: Vec4): Vec4 {
+export function lerpVec4 (t: number, a: Vec4, b: Vec4): Vec4 {
   return new Vec4(lerp(t, a.x, b.x), lerp(t, a.y, b.y), lerp(t, a.z, b.z), lerp(t, a.w, b.w))
 }
 
@@ -133,16 +133,16 @@ export function lerpVector4 (t: number, a: Vec4, b: Vec4): Vec4 {
  * @param values The array to search from.
  * @returns A minimum positive value and its associated index from the array given.
  */
-export function minPositive (...values: readonly number[]): { id: number, value: number } {
-  let minPositiveValue = Infinity
+export function minPos (...values: readonly number[]): { id: number, value: number } {
+  let minPosValue = Infinity
   let id = -1
   for (let i = 0; i !== values.length; ++i) {
     const value = values[i]
-    if (value === undefined || value < 0 || value >= minPositiveValue) continue
-    minPositiveValue = value
+    if (value === undefined || value < 0 || value >= minPosValue) continue
+    minPosValue = value
     id = i
   }
-  return { id, value: minPositiveValue }
+  return { id, value: minPosValue }
 }
 
 /**
@@ -151,16 +151,16 @@ export function minPositive (...values: readonly number[]): { id: number, value:
  * @param values The array to search from.
  * @returns A maximum positive value and its associated index from the array given.
  */
-export function maxPositive (...values: readonly number[]): { id: number, value: number } {
-  let maxPositiveValue = -Infinity
+export function maxPos (...values: readonly number[]): { id: number, value: number } {
+  let maxPosValue = -Infinity
   let id = -1
   for (let i = 0; i !== values.length; ++i) {
     const value = values[i]
-    if (value === undefined || value < 0 || value <= maxPositiveValue) continue
-    maxPositiveValue = value
+    if (value === undefined || value < 0 || value <= maxPosValue) continue
+    maxPosValue = value
     id = i
   }
-  return { id, value: maxPositiveValue }
+  return { id, value: maxPosValue }
 }
 
 /**
@@ -169,16 +169,16 @@ export function maxPositive (...values: readonly number[]): { id: number, value:
  * @param values The array to search from.
  * @returns A minimum negative value and its associated index from the array given.
  */
-export function minNegative (...values: readonly number[]): { id: number, value: number } {
-  let minNegativeValue = Infinity
+export function minNeg (...values: readonly number[]): { id: number, value: number } {
+  let minNegValue = Infinity
   let id = -1
   for (let i = 0; i !== values.length; ++i) {
     const value = values[i]
-    if (value === undefined || value >= 0 || value >= minNegativeValue) continue
-    minNegativeValue = value
+    if (value === undefined || value >= 0 || value >= minNegValue) continue
+    minNegValue = value
     id = i
   }
-  return { id, value: minNegativeValue }
+  return { id, value: minNegValue }
 }
 
 /**
@@ -187,16 +187,16 @@ export function minNegative (...values: readonly number[]): { id: number, value:
  * @param values The array to search from.
  * @returns A maximum negative value and its associated index from the array given.
  */
-export function maxNegative (...values: readonly number[]): { id: number, value: number } {
-  let maxNegativeValue = -Infinity
+export function maxNeg (...values: readonly number[]): { id: number, value: number } {
+  let maxNegValue = -Infinity
   let id = -1
   for (let i = 0; i !== values.length; ++i) {
     const value = values[i]
-    if (value === undefined || value >= 0 || value <= maxNegativeValue) continue
-    maxNegativeValue = value
+    if (value === undefined || value >= 0 || value <= maxNegValue) continue
+    maxNegValue = value
     id = i
   }
-  return { id, value: maxNegativeValue }
+  return { id, value: maxNegValue }
 }
 
 /**
@@ -221,7 +221,7 @@ export function linearMap (value: number, from: Seq, to: Seq): number {
  * @param toSize The size of the region that the `value` maps to.
  * @returns A mapped value that belongs to the second region given.
  */
-export function linearMapVector2 (
+export function linearMapVec2 (
   value: Vec2, fromPosition: Vec2, fromSize: Vec2, toPosition: Vec2, toSize: Vec2
 ): Vec2 {
   return new Vec2(

@@ -11,10 +11,10 @@ export function copy(srcArray, destArray) {
     for (let i = 0; i !== srcArray.length; ++i)
         destArray[i] = requireDefined(srcArray[i]);
 }
-export function insertionSort(array, indices = new Bound(0, Number.MAX_SAFE_INTEGER), compare = (left, right) => left > right) {
-    const maxID = Math.min(indices.max, array.length - 1);
-    for (let i = indices.min + 1; i <= maxID; ++i) {
-        for (let j = i; j > indices.min; --j) {
+export function insertionSort(array, ids = new Bound(0, Number.MAX_SAFE_INTEGER), compare = (left, right) => left > right) {
+    const maxID = Math.min(ids.max, array.length - 1);
+    for (let i = ids.min + 1; i <= maxID; ++i) {
+        for (let j = i; j > ids.min; --j) {
             if (compare(requireDefined(array[j - 1]), requireDefined(array[j])))
                 swapInArray(array, j - 1, j);
             else
