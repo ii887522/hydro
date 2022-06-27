@@ -18,7 +18,7 @@ export default class Bound {
     this.max = Math.max(a, b)
   }
 
-  get middle (): number {
+  get mid (): number {
     return (this.min + this.max) * 0.5
   }
 
@@ -66,7 +66,7 @@ export default class Bound {
    *
    * @returns A sequence that represents this boundary.
    */
-  toSequence (): Seq {
+  toSeq (): Seq {
     return new Seq(this.min, this.max)
   }
 }

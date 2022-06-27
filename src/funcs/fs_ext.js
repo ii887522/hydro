@@ -13,7 +13,7 @@ export async function emptyDir(dirPath) {
         });
     });
 }
-export async function removeFiles(extensionName, dirPath) {
+export async function removeFiles(extName, dirPath) {
     return await new Promise((resolve, reject) => {
         readdir(`${dirPath}/`, (err, filePaths) => {
             if (err !== null) {
@@ -22,11 +22,11 @@ export async function removeFiles(extensionName, dirPath) {
             }
             let pendingEntryCount = 0;
             for (const filePath of filePaths) {
-                if (filePath.endsWith(`.${extensionName}`))
+                if (filePath.endsWith(`.${extName}`))
                     ++pendingEntryCount;
             }
             for (const filePath of filePaths) {
-                if (filePath.endsWith(`.${extensionName}`)) {
+                if (filePath.endsWith(`.${extName}`)) {
                     rm(`${dirPath}/${filePath}`, err => {
                         if (err !== null) {
                             reject(err);
@@ -43,7 +43,7 @@ export async function removeFiles(extensionName, dirPath) {
 export function getFileName(path) {
     return path.substring(path.lastIndexOf('/') + 1);
 }
-export async function hasFileWithExtension(extensionName, dirPath) {
+export async function hasFileWithExt(extName, dirPath) {
     return await new Promise((resolve, reject) => {
         access(`${dirPath}/`, err => {
             if (err !== null) {
@@ -56,7 +56,7 @@ export async function hasFileWithExtension(extensionName, dirPath) {
                     return;
                 }
                 for (const filePath of filePaths) {
-                    if (filePath.endsWith(`.${extensionName}`)) {
+                    if (filePath.endsWith(`.${extName}`)) {
                         resolve(true);
                         return;
                     }

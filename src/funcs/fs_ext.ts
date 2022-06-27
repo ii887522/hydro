@@ -25,11 +25,11 @@ export async function emptyDir (dirPath: string): Promise<void> {
  * Removes all files in the directory where its path is received from its parameter with matching extension name
  * received.
  *
- * @param extensionName Files where its file name contains the extension name will be removed. The name must not starts
+ * @param extName Files where its file name contains the extension name will be removed. The name must not starts
  *   with .
  * @param dirPath The path where the directory is to be focused on. The path must not ends with /
  */
-export async function removeFiles (extensionName: string, dirPath: string): Promise<void> {
+export async function removeFiles (extName: string, dirPath: string): Promise<void> {
   return await new Promise((resolve, reject) => {
     readdir(`${dirPath}/`, (err, filePaths) => {
       if (err !== null) {
@@ -38,10 +38,10 @@ export async function removeFiles (extensionName: string, dirPath: string): Prom
       }
       let pendingEntryCount = 0
       for (const filePath of filePaths) {
-        if (filePath.endsWith(`.${extensionName}`)) ++pendingEntryCount
+        if (filePath.endsWith(`.${extName}`)) ++pendingEntryCount
       }
       for (const filePath of filePaths) {
-        if (filePath.endsWith(`.${extensionName}`)) {
+        if (filePath.endsWith(`.${extName}`)) {
           rm(`${dirPath}/${filePath}`, err => {
             if (err !== null) {
               reject(err)
@@ -69,12 +69,12 @@ export function getFileName (path: string): string {
  * Checks whether the directory path given has at least one file with an `extensionName` that is received from the
  * parameter.
  *
- * @param extensionName The extension name used during checking. The name must not start with .
+ * @param extName The extension name used during checking. The name must not start with .
  * @param dirPath The path where the directory is to be focused on. The path must not end with /
  * @returns true if there is at least one file with an `extensionName` that is coming from the parameter, false
  *   otherwise.
  */
-export async function hasFileWithExtension (extensionName: string, dirPath: string): Promise<boolean> {
+export async function hasFileWithExt (extName: string, dirPath: string): Promise<boolean> {
   return await new Promise((resolve, reject) => {
     access(`${dirPath}/`, err => {
       if (err !== null) {
@@ -87,7 +87,7 @@ export async function hasFileWithExtension (extensionName: string, dirPath: stri
           return
         }
         for (const filePath of filePaths) {
-          if (filePath.endsWith(`.${extensionName}`)) {
+          if (filePath.endsWith(`.${extName}`)) {
             resolve(true)
             return
           }

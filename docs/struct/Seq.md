@@ -48,6 +48,6 @@ Returns a boundary that represents this sequence.
 
 ### **Example usage:**
 ```ts
-expect(new Sequence(0, 1).toBound()).toEqual(new Bound(0, 1))
+expect(new Seq(0, 1).toBound()).toEqual(new Bound(0, 1))
 ```
 <br />

@@ -2,21 +2,21 @@
 Defines a boundary between the minimum and maximum value.
 
 ## Table of contents
-- [middle](https://github.com/ii887522/hydro/blob/master/docs/struct/Bound.md#middle)
+- [mid](https://github.com/ii887522/hydro/blob/master/docs/struct/Bound.md#mid)
 - [isIntersect](https://github.com/ii887522/hydro/blob/master/docs/struct/Bound.md#isIntersect)
 - [intersect](https://github.com/ii887522/hydro/blob/master/docs/struct/Bound.md#intersect)
 - [clamp](https://github.com/ii887522/hydro/blob/master/docs/struct/Bound.md#clamp)
 - [random](https://github.com/ii887522/hydro/blob/master/docs/struct/Bound.md#random)
-- [toSequence](https://github.com/ii887522/hydro/blob/master/docs/struct/Bound.md#toSequence)
+- [toSeq](https://github.com/ii887522/hydro/blob/master/docs/struct/Bound.md#toSeq)
 
-## **middle**
+## **mid**
 ```ts
-get middle (): number
+get mid (): number
 ```
 
 ### **Example usage:**
 ```ts
-expect(new Bound(0, 2).middle).toBe(1)
+expect(new Bound(0, 2).mid).toBe(1)
 ```
 <br />
 
@@ -81,9 +81,9 @@ expect(new Bound(0, 2).random()).toBeLessThanOrEqual(2)
 ```
 <br />
 
-## **toSequence**
+## **toSeq**
 ```ts
-toSequence (): Sequence
+toSeq (): Seq
 ```
 Treats this boundary as a sequence.
 
@@ -91,6 +91,6 @@ Returns a sequence that represents this boundary.
 
 ### **Example usage:**
 ```ts
-expect(new Bound(1, 2).toSequence()).toEqual(new Sequence(1, 2))
+expect(new Bound(1, 2).toSeq()).toEqual(new Seq(1, 2))
 ```
 <br />

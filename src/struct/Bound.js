@@ -5,7 +5,7 @@ export default class Bound {
         this.min = Math.min(a, b);
         this.max = Math.max(a, b);
     }
-    get middle() {
+    get mid() {
         return (this.min + this.max) * 0.5;
     }
     isIntersect(that) {
@@ -20,7 +20,7 @@ export default class Bound {
     random() {
         return Math.random() * (this.max - this.min) + this.min;
     }
-    toSequence() {
+    toSeq() {
         return new Seq(this.min, this.max);
     }
 }
