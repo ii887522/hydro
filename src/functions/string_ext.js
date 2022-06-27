@@ -1,7 +1,7 @@
 'use strict';
 export function substring(from, startText, endText) {
-    const startTextIndex = from.indexOf(startText);
-    return from.substring(startTextIndex, from.indexOf(endText, startTextIndex));
+    const startTextID = from.indexOf(startText);
+    return from.substring(startTextID, from.indexOf(endText, startTextID));
 }
 export function isUint(value) {
     for (const ch of value) {
