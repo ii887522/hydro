@@ -1,36 +1,36 @@
 # math_ext
 
 ## Table of contents
-- [toSeconds](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#toSeconds)
+- [toSec](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#toSec)
 - [isOdd](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isOdd)
 - [isEven](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isEven)
 - [isPrime](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isPrime)
 - [getNextPrime](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#getNextPrime)
-- [isPowerOfTwo](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isPowerOfTwo)
+- [isPowOf2](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#isPowOf2)
 - [lerp](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerp)
-- [lerpVector2](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVector2)
-- [lerpVector3](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVector3)
-- [lerpVector4](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVector4)
-- [minPositive](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#minPositive)
-- [maxPositive](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#maxPositive)
-- [minNegative](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#minNegative)
-- [maxNegative](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#maxNegative)
+- [lerpVec2](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVec2)
+- [lerpVec3](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVec3)
+- [lerpVec4](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#lerpVec4)
+- [minPos](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#minPos)
+- [maxPos](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#maxPos)
+- [minNeg](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#minNeg)
+- [maxNeg](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#maxNeg)
 - [linearMap](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#linearMap)
-- [linearMapVector2](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#linearMapVector2)
+- [linearMapVec2](https://github.com/ii887522/hydro/blob/master/docs/funcs/math_ext.md#linearMapVec2)
 
-## **toSeconds**
+## **toSec**
 ```ts
-function toSeconds(nanoseconds: number): number
+function toSec(nanosec: number): number
 ```
 Converts nanoseconds into seconds.
 
-`nanoseconds`: The value to be converted.
+`nanosec`: The value to be converted.
 
 Returns the received value in terms of seconds.
 
 ### **Example usage:**
 ```ts
-expect(toSeconds(2e+9)).toBe(2)
+expect(toSec(2e+9)).toBe(2)
 ```
 <br />
 
@@ -98,9 +98,9 @@ expect(getNextPrime(0)).toBe(2)
 ```
 <br />
 
-## **isPowerOfTwo**
+## **isPowOf2**
 ```ts
-function isPowerOfTwo (value: number): boolean
+function isPowOf2 (value: number): boolean
 ```
 Checks whether the `value` given is equal to 2 to the power of n where n is an integer.
 
@@ -110,7 +110,7 @@ Returns true if the `value` is equal to 2 to the power of n where n is an intege
 
 ### **Example usage:**
 ```ts
-expect(isPowerOfTwo(1)).toBeTruthy()
+expect(isPowOf2(1)).toBeTruthy()
 ```
 <br />
 
@@ -134,9 +134,9 @@ expect(lerp(2, 1, 0)).toBe(-1)
 ```
 <br />
 
-## **lerpVector2**
+## **lerpVec2**
 ```ts
-function lerpVector2 (t: number, a: Vector2, b: Vector2): Vector2
+function lerpVec2 (t: number, a: Vec2, b: Vec2): Vec2
 ```
 Performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
 
@@ -150,13 +150,13 @@ Returns a value at time `t`.
 
 ### **Example usage:**
 ```ts
-expect(lerpVector2(2, new Vector2(2, 1), new Vector2(2, 0))).toEqual(new Vector2(2, -1))
+expect(lerpVec2(2, new Vec2(2, 1), new Vec2(2, 0))).toEqual(new Vec2(2, -1))
 ```
 <br />
 
-## **lerpVector3**
+## **lerpVec3**
 ```ts
-function lerpVector3 (t: number, a: Vector3, b: Vector3): Vector3
+function lerpVec3 (t: number, a: Vec3, b: Vec3): Vec3
 ```
 Performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
 
@@ -170,13 +170,13 @@ Returns a value at time `t`.
 
 ### **Example usage:**
 ```ts
-expect(lerpVector3(2, new Vector3(2, 2, 1), new Vector3(2, 2, 0))).toEqual(new Vector3(2, 2, -1))
+expect(lerpVec3(2, new Vec3(2, 2, 1), new Vec3(2, 2, 0))).toEqual(new Vec3(2, 2, -1))
 ```
 <br />
 
-## **lerpVector4**
+## **lerpVec4**
 ```ts
-function lerpVector4 (t: number, a: Vector4, b: Vector4): Vector4
+function lerpVec4 (t: number, a: Vec4, b: Vec4): Vec4
 ```
 Performs a linear interpolation to find a value at time `t` when t = 0, value is `a`; t = 1, value is `b`.
 
@@ -190,13 +190,13 @@ Returns a value at time `t`.
 
 ### **Example usage:**
 ```ts
-expect(lerpVector4(2, new Vector4(2, 2, 2, 1), new Vector4(2, 2, 2, 0))).toEqual(new Vector4(2, 2, 2, -1))
+expect(lerpVec4(2, new Vec4(2, 2, 2, 1), new Vec4(2, 2, 2, 0))).toEqual(new Vec4(2, 2, 2, -1))
 ```
 <br />
 
-## **minPositive**
+## **minPos**
 ```ts
-function minPositive (...values: readonly number[]): { id: number, value: number }
+function minPos (...values: readonly number[]): { id: number, value: number }
 ```
 Finds a minimum positive value and its associated index from the array given.
 
@@ -206,13 +206,13 @@ Returns a minimum positive value and its associated index from the array given.
 
 ### **Example usage:**
 ```ts
-expect(minPositive(2, 2, 0)).toEqual({ id: 2, value: 0 })
+expect(minPos(2, 2, 0)).toEqual({ id: 2, value: 0 })
 ```
 <br />
 
-## **maxPositive**
+## **maxPos**
 ```ts
-function maxPositive (...values: readonly number[]): { id: number, value: number }
+function maxPos (...values: readonly number[]): { id: number, value: number }
 ```
 Finds a maximum positive value and its associated index from the array given.
 
@@ -222,13 +222,13 @@ Returns a maximum positive value and its associated index from the array given.
 
 ### **Example usage:**
 ```ts
-expect(maxPositive(0, 0, 2)).toEqual({ id: 2, value: 2 })
+expect(maxPos(0, 0, 2)).toEqual({ id: 2, value: 2 })
 ```
 <br />
 
-## **minNegative**
+## **minNeg**
 ```ts
-function minNegative (...values: readonly number[]): { id: number, value: number }
+function minNeg (...values: readonly number[]): { id: number, value: number }
 ```
 Finds a minimum negative value and its associated index from the array given.
 
@@ -238,12 +238,12 @@ Returns a minimum negative value and its associated index from the array given.
 
 ### **Example usage:**
 ```ts
-expect(minNegative(-1, -1, -2)).toEqual({ id: 2, value: -2 })
+expect(minNeg(-1, -1, -2)).toEqual({ id: 2, value: -2 })
 ```
 
-## **maxNegative**
+## **maxNeg**
 ```ts
-function maxNegative (...values: readonly number[]): { id: number, value: number }
+function maxNeg (...values: readonly number[]): { id: number, value: number }
 ```
 Finds a maximum negative value and its associated index from the array given.
 
@@ -253,7 +253,7 @@ Returns a maximum negative value and its associated index from the array given.
 
 ### **Example usage:**
 ```ts
-expect(maxNegative(-3, -3, -1)).toEqual({ id: 2, value: -1 })
+expect(maxNeg(-3, -3, -1)).toEqual({ id: 2, value: -1 })
 ```
 
 ## **linearMap**
@@ -275,9 +275,9 @@ Returns a mapped value that belongs to the second sequence given.
 expect(linearMap(2, new Sequence(0, 4), new Sequence(0, 1))).toBe(0.5)
 ```
 
-## **linearMapVector2**
+## **linearMapVec2**
 ```ts
-function linearMapVector2 (
+function linearMapVec2 (
   value: Vector2, fromPosition: Vector2, fromSize: Vector2, toPosition: Vector2, toSize: Vector2
 ): Vector2
 ```
@@ -298,7 +298,7 @@ Returns a mapped value that belongs to the second region given.
 ### **Example usage:**
 ```ts
 expect(
-  linearMapVector2(new Vector2(2, 2), new Vector2(2, 2), new Vector2(1, 1), new Vector2(1, 0), new Vector2(1, 1))
-).toEqual(new Vector2(1, 0))
+  linearMapVec2(new Vec2(2, 2), new Vec2(2, 2), new Vec2(1, 1), new Vec2(1, 0), new Vec2(1, 1))
+).toEqual(new Vec2(1, 0))
 ```
 <br />
