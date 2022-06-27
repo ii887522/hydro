@@ -1,5 +1,5 @@
 'use strict';
-export default class Vector4 {
+export default class Vec4 {
     constructor(_x = 0, _y = 0, _z = 0, _w = 0) {
         this._x = _x;
         this._y = _y;
@@ -8,7 +8,7 @@ export default class Vector4 {
         this._length = 0;
         this.isLengthValid = false;
     }
-    static fromVector4(that) {
+    static fromVec4(that) {
         return new this(that.x, that.y, that.z, that.w);
     }
     static fromValue(value) {
@@ -24,7 +24,7 @@ export default class Vector4 {
         this.isLengthValid = false;
     }
     withX(value) {
-        return new Vector4(value, this.y, this.z, this.w);
+        return new Vec4(value, this.y, this.z, this.w);
     }
     get y() {
         return this._y;
@@ -36,7 +36,7 @@ export default class Vector4 {
         this.isLengthValid = false;
     }
     withY(value) {
-        return new Vector4(this.x, value, this.z, this.w);
+        return new Vec4(this.x, value, this.z, this.w);
     }
     get z() {
         return this._z;
@@ -48,7 +48,7 @@ export default class Vector4 {
         this.isLengthValid = false;
     }
     withZ(value) {
-        return new Vector4(this.x, this.y, value, this.w);
+        return new Vec4(this.x, this.y, value, this.w);
     }
     get w() {
         return this._w;
@@ -60,19 +60,19 @@ export default class Vector4 {
         this.isLengthValid = false;
     }
     withW(value) {
-        return new Vector4(this.x, this.y, this.z, value);
+        return new Vec4(this.x, this.y, this.z, value);
     }
     plus(that) {
-        return new Vector4(this.x + that.x, this.y + that.y, this.z + that.z, this.w + that.w);
+        return new Vec4(this.x + that.x, this.y + that.y, this.z + that.z, this.w + that.w);
     }
     minus(that) {
-        return new Vector4(this.x - that.x, this.y - that.y, this.z - that.z, this.w - that.w);
+        return new Vec4(this.x - that.x, this.y - that.y, this.z - that.z, this.w - that.w);
     }
     times(value) {
-        return new Vector4(this.x * value, this.y * value, this.z * value, this.w * value);
+        return new Vec4(this.x * value, this.y * value, this.z * value, this.w * value);
     }
     divide(value) {
-        return new Vector4(this.x / value, this.y / value, this.z / value, this.w / value);
+        return new Vec4(this.x / value, this.y / value, this.z / value, this.w / value);
     }
     assign(that) {
         if (this.isEqual(that))
@@ -84,7 +84,7 @@ export default class Vector4 {
         this.isLengthValid = false;
     }
     plusAssign(that) {
-        if (that.isEqual(new Vector4()))
+        if (that.isEqual(new Vec4()))
             return;
         this.x += that.x;
         this.y += that.y;
@@ -93,7 +93,7 @@ export default class Vector4 {
         this.isLengthValid = false;
     }
     minusAssign(that) {
-        if (that.isEqual(new Vector4()))
+        if (that.isEqual(new Vec4()))
             return;
         this.x -= that.x;
         this.y -= that.y;
@@ -140,19 +140,19 @@ export default class Vector4 {
         return this.divide(this.length);
     }
     get xFliped() {
-        return new Vector4(-this.x, this.y, this.z, this.w);
+        return new Vec4(-this.x, this.y, this.z, this.w);
     }
     get yFliped() {
-        return new Vector4(this.x, -this.y, this.z, this.w);
+        return new Vec4(this.x, -this.y, this.z, this.w);
     }
     get zFliped() {
-        return new Vector4(this.x, this.y, -this.z, this.w);
+        return new Vec4(this.x, this.y, -this.z, this.w);
     }
     get wFliped() {
-        return new Vector4(this.x, this.y, this.z, -this.w);
+        return new Vec4(this.x, this.y, this.z, -this.w);
     }
     get fliped() {
-        return new Vector4(-this.x, -this.y, -this.z, -this.w);
+        return new Vec4(-this.x, -this.y, -this.z, -this.w);
     }
     toString() {
         return `${this.x},${this.y},${this.z},${this.w}`;

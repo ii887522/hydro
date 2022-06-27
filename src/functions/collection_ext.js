@@ -2,18 +2,18 @@
 import { requireDefined, swapInHolders } from '../../index.js';
 import Bound from '../struct/Bound.js';
 import Holder from '../struct/Holder.js';
-export function swapInArray(array, leftIndex, rightIndex) {
-    const left = requireDefined(array[leftIndex]);
-    array[leftIndex] = requireDefined(array[rightIndex]);
-    array[rightIndex] = left;
+export function swapInArray(array, leftID, rightID) {
+    const left = requireDefined(array[leftID]);
+    array[leftID] = requireDefined(array[rightID]);
+    array[rightID] = left;
 }
 export function copy(srcArray, destArray) {
     for (let i = 0; i !== srcArray.length; ++i)
         destArray[i] = requireDefined(srcArray[i]);
 }
 export function insertionSort(array, indices = new Bound(0, Number.MAX_SAFE_INTEGER), compare = (left, right) => left > right) {
-    const maxIndex = Math.min(indices.max, array.length - 1);
-    for (let i = indices.min + 1; i <= maxIndex; ++i) {
+    const maxID = Math.min(indices.max, array.length - 1);
+    for (let i = indices.min + 1; i <= maxID; ++i) {
         for (let j = i; j > indices.min; --j) {
             if (compare(requireDefined(array[j - 1]), requireDefined(array[j])))
                 swapInArray(array, j - 1, j);

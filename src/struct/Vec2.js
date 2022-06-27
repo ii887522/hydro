@@ -1,12 +1,12 @@
 'use strict';
-export default class Vector2 {
+export default class Vec2 {
     constructor(_x = 0, _y = 0) {
         this._x = _x;
         this._y = _y;
         this._length = 0;
         this.isLengthValid = false;
     }
-    static fromVector2(that) {
+    static fromVec2(that) {
         return new this(that.x, that.y);
     }
     static fromValue(value) {
@@ -22,7 +22,7 @@ export default class Vector2 {
         this.isLengthValid = false;
     }
     withX(value) {
-        return new Vector2(value, this.y);
+        return new Vec2(value, this.y);
     }
     get y() {
         return this._y;
@@ -34,19 +34,19 @@ export default class Vector2 {
         this.isLengthValid = false;
     }
     withY(value) {
-        return new Vector2(this.x, value);
+        return new Vec2(this.x, value);
     }
     plus(that) {
-        return new Vector2(this.x + that.x, this.y + that.y);
+        return new Vec2(this.x + that.x, this.y + that.y);
     }
     minus(that) {
-        return new Vector2(this.x - that.x, this.y - that.y);
+        return new Vec2(this.x - that.x, this.y - that.y);
     }
     times(value) {
-        return new Vector2(this.x * value, this.y * value);
+        return new Vec2(this.x * value, this.y * value);
     }
     divide(value) {
-        return new Vector2(this.x / value, this.y / value);
+        return new Vec2(this.x / value, this.y / value);
     }
     assign(that) {
         if (this.isEqual(that))
@@ -56,14 +56,14 @@ export default class Vector2 {
         this.isLengthValid = false;
     }
     plusAssign(that) {
-        if (that.isEqual(new Vector2()))
+        if (that.isEqual(new Vec2()))
             return;
         this.x += that.x;
         this.y += that.y;
         this.isLengthValid = false;
     }
     minusAssign(that) {
-        if (that.isEqual(new Vector2()))
+        if (that.isEqual(new Vec2()))
             return;
         this.x -= that.x;
         this.y -= that.y;
@@ -104,13 +104,13 @@ export default class Vector2 {
         return this.divide(this.length);
     }
     get xFliped() {
-        return new Vector2(-this.x, this.y);
+        return new Vec2(-this.x, this.y);
     }
     get yFliped() {
-        return new Vector2(this.x, -this.y);
+        return new Vec2(this.x, -this.y);
     }
     get fliped() {
-        return new Vector2(-this.x, -this.y);
+        return new Vec2(-this.x, -this.y);
     }
     toString() {
         return `${this.x},${this.y}`;

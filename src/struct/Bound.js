@@ -1,5 +1,5 @@
 'use strict';
-import Sequence from './Sequence.js';
+import Seq from './Seq.js';
 export default class Bound {
     constructor(a = 0, b = 0) {
         this.min = Math.min(a, b);
@@ -21,6 +21,6 @@ export default class Bound {
         return Math.random() * (this.max - this.min) + this.min;
     }
     toSequence() {
-        return new Sequence(this.min, this.max);
+        return new Seq(this.min, this.max);
     }
 }

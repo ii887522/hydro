@@ -87,35 +87,6 @@ test('step delayed value when initial value is 6', () => {
     delayedValue.step(1);
     expect(delayedValue.value).toBe(4);
 });
-test('step delayed value when initial value is 6', () => {
-    const delayedValue = new Delayed(6);
-    delayedValue.step(0);
-    expect(delayedValue.value).toBe(6);
-    delayedValue.value = 1;
-    delayedValue.step(0);
-    expect(delayedValue.value).toBe(6);
-    delayedValue.step(1);
-    expect(delayedValue.value).toBe(1);
-    delayedValue.step(2);
-    expect(delayedValue.value).toBe(1);
-    delayedValue.value = 2;
-    delayedValue.step(0);
-    expect(delayedValue.value).toBe(1);
-    delayedValue.step(1);
-    expect(delayedValue.value).toBe(2);
-    delayedValue.step(2);
-    expect(delayedValue.value).toBe(2);
-    delayedValue.setNow(3);
-    delayedValue.step(0);
-    expect(delayedValue.value).toBe(3);
-    delayedValue.step(1);
-    expect(delayedValue.value).toBe(3);
-    delayedValue.setNow(4);
-    delayedValue.step(0);
-    expect(delayedValue.value).toBe(4);
-    delayedValue.step(1);
-    expect(delayedValue.value).toBe(4);
-});
 test('step delayed value when initial value is 6 and timeout after 10 time units', () => {
     const delayedValue = new Delayed(6, 10);
     delayedValue.step(0);

@@ -14,7 +14,7 @@ export default class DynamicUint8Array {
         return this.currentData.value.slice(0, this.size);
     }
     add(array) {
-        const growthFactor = 1.33;
+        const growthFactor = 1.3247;
         if (this.size + array.length > this.currentData.value.length) {
             this.grow(Math.floor((this.size + array.length) * growthFactor));
         }

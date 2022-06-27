@@ -1,7 +1,7 @@
 'use strict';
 import cluster from 'cluster';
 import { cpus } from 'os';
-import constants from '../any/constants.js';
+import constants from '../any/consts.js';
 let keys;
 export function spawnWorkers() {
     for (let i = 0; i !== cpus().length; ++i)

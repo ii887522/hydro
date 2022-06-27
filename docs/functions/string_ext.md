@@ -8,7 +8,7 @@
 ```ts
 function substring (from: string, startText: string, endText: string): string
 ```
-It returns a substring from the original string received which starts from the start text given and ends with a text which immediately precedes the end text given.
+Returns a substring from the original string received which starts from the start text given and ends with a text which immediately precedes the end text given.
 
 `from`: The original string given.
 
@@ -26,11 +26,11 @@ expect(substring('SDL2_image-2.0.5/lib/x86/libpng16-16.dll', 'image', '.dll')).t
 ```ts
 function isUint(value: string): boolean
 ```
-It checks whether the `value` given is actually an unsigned integer which is converted to a string.
+Checks whether the `value` given is actually an unsigned integer which is converted to a string.
 
 `value`: The value to be checked.
 
-It returns true if the `value` is an unsigned integer which is converted to a string.
+Returns true if the `value` is an unsigned integer which is converted to a string.
 
 ### **Example usage:**
 ```ts

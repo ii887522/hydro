@@ -1,7 +1,7 @@
 'use strict'
 
 /**
- * It is a value holder that keeps changing its value by the `interval` given. Users of this class must keep calling
+ * A value holder that keeps changing its value by the `interval` given. Users of this class must keep calling
  * `step(dt)` method to simulate frequently changing value.
  */
 export default class Dynamic<T> {
@@ -21,7 +21,7 @@ export default class Dynamic<T> {
   }
 
   /**
-   * It advances the time being tracked by the given `dt` for simulating frequently changing value.
+   * Advances the time being tracked by the given `dt` for simulating frequently changing value.
    *
    * @param dt Some small amount of time to advance.
    */

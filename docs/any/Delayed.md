@@ -1,5 +1,5 @@
 # Delayed
-It is a value holder that allows new value to be assigned in the future by the `timeout` given. Users of this class must keep calling `step(dt)` method to simulate delayed assignment of new value.
+A value holder that allows new value to be assigned in the future by the `timeout` given. Users of this class must keep calling `step(dt)` method to simulate delayed assignment of new value.
 
 ## Table of contents
 - [get value](https://github.com/ii887522/hydro/blob/master/docs/any/Delayed.md#get-value)
@@ -48,7 +48,7 @@ expect(delayedValue.value).toBe(3)
 ```ts
 step (dt: number): void
 ```
-It advances the time being tracked by the given `dt` for simulating delayed assignment of new value.
+Advances the time being tracked by the given `dt` which is a small amount for simulating delayed assignment of new value.
 
 `dt`: Some small amount of time to advance.
 

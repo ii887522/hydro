@@ -1,6 +1,6 @@
 'use strict'
 
-import Sequence from '../../../src/struct/Sequence.js'
+import Seq from '../../../src/struct/Seq.js'
 import Bound from '../../../src/struct/Bound.js'
 
 test('Bound::middle', () => {
@@ -60,9 +60,9 @@ test('Bound::random', () => {
 })
 
 test('Bound::toSequence', () => {
-  expect(new Bound(0, 0).toSequence()).toEqual(new Sequence(0, 0))
-  expect(new Bound(0, 1).toSequence()).toEqual(new Sequence(0, 1))
-  expect(new Bound(0, 2).toSequence()).toEqual(new Sequence(0, 2))
-  expect(new Bound(1, 2).toSequence()).toEqual(new Sequence(1, 2))
-  expect(new Bound(2, 2).toSequence()).toEqual(new Sequence(2, 2))
+  expect(new Bound(0, 0).toSequence()).toEqual(new Seq(0, 0))
+  expect(new Bound(0, 1).toSequence()).toEqual(new Seq(0, 1))
+  expect(new Bound(0, 2).toSequence()).toEqual(new Seq(0, 2))
+  expect(new Bound(1, 2).toSequence()).toEqual(new Seq(1, 2))
+  expect(new Bound(2, 2).toSequence()).toEqual(new Seq(2, 2))
 })

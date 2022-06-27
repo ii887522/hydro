@@ -1,7 +1,7 @@
 # ReactiveArray
-It is a wrapper that listens for changes to the array being held and automatically notifies all registered watchers
-about the new values in the array given. It is used to establish communications between multiple modules to achieve
-loose coupling between the modules involved.
+A wrapper that listens for changes to the array being held and automatically notifies all registered watchers about the
+new values in the array given. It is used to establish communications between multiple modules to achieve loose coupling
+between the modules involved.
 
 ## Table of contents
 - [set](https://github.com/ii887522/hydro/blob/master/docs/reactive/ReactiveArray.md#set)
@@ -12,13 +12,13 @@ loose coupling between the modules involved.
 
 ## **set**
 ```ts
-set (index: number, item: T): void
+set (id: number, item: T): void
 ```
-It replaces an old item located at the `index` with the new `item`.
+Replaces an old item located at the `id` with the new `item`.
 
-`index`: The position for which the item needs to be replaced.
+`id`: The position for which the item needs to be replaced.
 
-`item`: The new item located at the `index`.
+`item`: The new item located at the `id`.
 
 ### **Example usage:**
 ```ts
@@ -32,13 +32,11 @@ expect(array.get(2)).toBe(0)
 
 ## **get**
 ```ts
-get (index: number): T | undefined
+get (id: number): T | undefined
 ```
-It retrieves the item located at `index`.
+Retrieves the item located at `id`.
 
-`index`: The position for which the item needs to be returned.
-
-It returns the item located at `index`.
+`id`: The position for which the item needs to be returned.
 
 ### **Example usage:**
 ```ts
@@ -53,7 +51,7 @@ expect(array.get(2)).toBe(2)
 ```ts
 push (item: T): void
 ```
-It inserts a new `item` at the end of this array thereby increases the size of the array by 1.
+Inserts a new `item` at the end of this array thereby increases the size of the array by 1.
 
 `item`: The new item to be inserted at the end of this array.
 
@@ -73,9 +71,9 @@ expect(array.get(2)).toBe(2)
 ```ts
 pop (): T | undefined
 ```
-It removes an old item at the end of this array thereby decreases the size of the array by 1.
+Removes an old item at the end of this array thereby decreases the size of the array by 1.
 
-It returns the old item that is just removed from this array.
+Returns the old item that is just removed from this array.
 
 ### **Example usage:**
 ```ts
@@ -91,9 +89,9 @@ expect(array.get(2)).toBe(2)
 ```ts
 [Symbol.iterator] (): Iterator<T>
 ```
-It creates an iterator that allows the user to loop through this array in ascending order once.
+Creates an iterator that allows the user to loop through this array in ascending order once.
 
-It returns a forward iterator that can loop through this array once.
+Returns a forward iterator that can loop through this array once.
 
 ### **Example usage:**
 ```ts
