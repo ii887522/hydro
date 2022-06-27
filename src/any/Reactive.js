@@ -1,11 +1,15 @@
 'use strict';
 import IDManager from './IDManager.js';
 export default class Reactive {
-    constructor(value) {
+    constructor(value, watcherID = -1) {
+        this.watcherID = watcherID;
         this.watcherIDManager = new IDManager();
         this.id = Reactive.idManager.next();
         this.children = [];
         this._value = value;
+    }
+    static from(value) {
+        return new this(value);
     }
     get value() {
         return this._value;
@@ -26,13 +30,13 @@ export default class Reactive {
     }
     watch(onChange) {
         const watcherID = this.watcherIDManager.next();
-        const reactive = new Reactive(onChange(this.value));
+        const reactive = new Reactive(onChange(this.value), watcherID);
         this.children[watcherID] = { onChange, reactive };
-        return { watcherID, reactive };
+        return reactive;
     }
-    unwatch(watcherID) {
-        delete this.children[watcherID];
-        this.watcherIDManager.free(watcherID);
+    unwatch(reactive) {
+        delete this.children[reactive.watcherID];
+        this.watcherIDManager.free(reactive.watcherID);
     }
 }
 Reactive.idManager = new IDManager();

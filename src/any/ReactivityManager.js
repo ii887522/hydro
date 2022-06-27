@@ -3,19 +3,20 @@ import Reactive from './Reactive.js';
 export default class ReactivityManager {
     constructor() {
         this.reactives = {};
-        this.watcherIDs = {};
+        this.watcherReactives = {};
     }
     watch(reactive, onChange) {
         this.reactives[reactive.id] = reactive;
         const result = reactive.watch(onChange);
-        if (this.watcherIDs[reactive.id] === undefined)
-            this.watcherIDs[reactive.id] = [result.watcherID];
+        if (this.watcherReactives[reactive.id] === undefined) {
+            this.watcherReactives[reactive.id] = [result];
+        }
         else
-            this.watcherIDs[reactive.id]?.push(result.watcherID);
-        return result.reactive;
+            this.watcherReactives[reactive.id]?.push(result);
+        return result;
     }
     watch2(reactiveA, reactiveB, onChange) {
-        const result = new Reactive(onChange(reactiveA.value, reactiveB.value));
+        const result = Reactive.from(onChange(reactiveA.value, reactiveB.value));
         this.watch(reactiveA, value => {
             result.value = onChange(value, reactiveB.value);
         });
@@ -25,7 +26,7 @@ export default class ReactivityManager {
         return result;
     }
     watch3(reactiveA, reactiveB, reactiveC, onChange) {
-        const result = new Reactive(onChange(reactiveA.value, reactiveB.value, reactiveC.value));
+        const result = Reactive.from(onChange(reactiveA.value, reactiveB.value, reactiveC.value));
         this.watch(reactiveA, value => {
             result.value = onChange(value, reactiveB.value, reactiveC.value);
         });
@@ -38,12 +39,12 @@ export default class ReactivityManager {
         return result;
     }
     freeWatchers() {
-        for (const reactiveID of Object.keys(this.watcherIDs)) {
-            const watcherIDs = this.watcherIDs[Number(reactiveID)];
-            if (watcherIDs === undefined)
+        for (const reactiveID of Object.keys(this.watcherReactives)) {
+            const watcherReactives = this.watcherReactives[Number(reactiveID)];
+            if (watcherReactives === undefined)
                 continue;
-            for (const watcherID of watcherIDs)
-                this.reactives[Number(reactiveID)]?.unwatch(watcherID);
+            for (const watcherReactive of watcherReactives)
+                this.reactives[Number(reactiveID)]?.unwatch(watcherReactive);
         }
     }
 }

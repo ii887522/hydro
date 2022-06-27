@@ -4,12 +4,12 @@ export default class ReactiveArray extends Reactive {
     constructor(...value) {
         super(value);
     }
-    set(index, item) {
-        this.value[index] = item;
+    set(id, item) {
+        this.value[id] = item;
         this.wakeChildren();
     }
-    get(index) {
-        return this.value[index];
+    get(id) {
+        return this.value[id];
     }
     push(item) {
         this.value.push(item);
@@ -21,11 +21,11 @@ export default class ReactiveArray extends Reactive {
         return result;
     }
     [Symbol.iterator]() {
-        let index = -1;
+        let id = -1;
         return {
             next: () => {
-                ++index;
-                const value = this.value[index];
+                ++id;
+                const value = this.value[id];
                 return value !== undefined ? { done: false, value } : { done: true, value: undefined };
             }
         };
