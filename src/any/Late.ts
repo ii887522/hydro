@@ -1,7 +1,7 @@
 'use strict'
 
 /**
- * It is a holder that allows late initialization of the value being held.
+ * A holder that allows late initialization of the value being held.
  */
 export default class Late<T> {
   private _value?: T

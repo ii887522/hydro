@@ -5,7 +5,7 @@ import ReactivityManager from '../../../src/any/ReactivityManager.js'
 
 test('ReactivityManager::watch', () => {
   const reactivityManager = new ReactivityManager()
-  const value = new Reactive(0)
+  const value = Reactive.from(0)
   const squaredValue = reactivityManager.watch(value, value => value * value)
   expect(squaredValue.value).toBe(0)
   value.value = 1
@@ -18,7 +18,7 @@ test('ReactivityManager::watch', () => {
   expect(valueStr.value).toBe('3')
   value.value = 4
   expect(valueStr.value).toBe('4')
-  const str = new Reactive('a')
+  const str = Reactive.from('a')
   const repeatedStr = reactivityManager.watch(str, value => `${value}${value}`)
   expect(repeatedStr.value).toBe('aa')
   str.value = 'b'
@@ -35,8 +35,8 @@ test('ReactivityManager::watch', () => {
 
 test('ReactivityManager::watch2', () => {
   const reactivityManager = new ReactivityManager()
-  const a = new Reactive(0)
-  const b = new Reactive(0)
+  const a = Reactive.from(0)
+  const b = Reactive.from(0)
   const sum = reactivityManager.watch2(a, b, (a, b) => a + b)
   expect(sum.value).toBe(0)
   a.value = 1
@@ -57,8 +57,8 @@ test('ReactivityManager::watch2', () => {
   expect(diff.value).toBe(3)
   b.value = 2
   expect(diff.value).toBe(4)
-  const c = new Reactive('a')
-  const d = new Reactive('b')
+  const c = Reactive.from('a')
+  const d = Reactive.from('b')
   const cd = reactivityManager.watch2(c, d, (c, d) => `${c}${d}`)
   expect(cd.value).toBe('ab')
   c.value = 'b'
@@ -83,9 +83,9 @@ test('ReactivityManager::watch2', () => {
 
 test('ReactivityManager::watch3', () => {
   const reactivityManager = new ReactivityManager()
-  const a = new Reactive(0)
-  const b = new Reactive(0)
-  const c = new Reactive(0)
+  const a = Reactive.from(0)
+  const b = Reactive.from(0)
+  const c = Reactive.from(0)
   const sum = reactivityManager.watch3(a, b, c, (a, b, c) => a + b + c)
   expect(sum.value).toBe(0)
   a.value = 1
@@ -114,9 +114,9 @@ test('ReactivityManager::watch3', () => {
   expect(diff.value).toBe(-10)
   c.value = 12
   expect(diff.value).toBe(-13)
-  const d = new Reactive('a')
-  const e = new Reactive('b')
-  const f = new Reactive('c')
+  const d = Reactive.from('a')
+  const e = Reactive.from('b')
+  const f = Reactive.from('c')
   const def = reactivityManager.watch3(d, e, f, (d, e, f) => `${d}${e}${f}`)
   expect(def.value).toBe('abc')
   d.value = 'd'
@@ -149,7 +149,7 @@ test('ReactivityManager::watch3', () => {
 
 test('ReactivityManager::freeWatchers', () => {
   const reactivityManager = new ReactivityManager()
-  const value = new Reactive(0)
+  const value = Reactive.from(0)
   const squaredValue = reactivityManager.watch(value, value => value * value)
   expect(squaredValue.value).toBe(0)
   value.value = 1

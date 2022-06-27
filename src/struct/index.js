@@ -1,7 +1,7 @@
 'use strict';
 export { default as Bound } from './Bound.js';
 export { default as Holder } from './Holder.js';
-export { default as Sequence } from './Sequence.js';
-export { default as Vector2 } from './Vector2.js';
-export { default as Vector3 } from './Vector3.js';
-export { default as Vector4 } from './Vector4.js';
+export { default as Seq } from './Seq.js';
+export { default as Vec2 } from './Vec2.js';
+export { default as Vec3 } from './Vec3.js';
+export { default as Vec4 } from './Vec4.js';

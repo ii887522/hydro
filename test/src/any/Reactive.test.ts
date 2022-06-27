@@ -3,14 +3,14 @@
 import Reactive from '../../../src/any/Reactive.js'
 
 test('watch a reactive object with initial value equal to 0', () => {
-  const value = new Reactive(0)
-  const { reactive: valueSquared } = value.watch(value => value * value)
+  const value = Reactive.from(0)
+  const valueSquared = value.watch(value => value * value)
   expect(valueSquared.value).toBe(0)
   value.value = 1
   expect(valueSquared.value).toBe(1)
   value.value = 2
   expect(valueSquared.value).toBe(4)
-  const { reactive: valueStr } = value.watch(value => `${value}`)
+  const valueStr = value.watch(value => `${value}`)
   expect(valueStr.value).toBe('2')
   value.value = 3
   expect(valueStr.value).toBe('3')
@@ -21,14 +21,14 @@ test('watch a reactive object with initial value equal to 0', () => {
 })
 
 test('watch a reactive object with initial value equal to a', () => {
-  const str = new Reactive('a')
-  const { reactive: repeatedStr } = str.watch(value => `${value}${value}`)
+  const str = Reactive.from('a')
+  const repeatedStr = str.watch(value => `${value}${value}`)
   expect(repeatedStr.value).toBe('aa')
   str.value = 'b'
   expect(repeatedStr.value).toBe('bb')
   str.value = '1'
   expect(repeatedStr.value).toBe('11')
-  const { reactive: number } = str.watch(value => Number(value))
+  const number = str.watch(value => Number(value))
   expect(number.value).toBe(1)
   str.value = '2'
   expect(number.value).toBe(2)
@@ -39,12 +39,12 @@ test('watch a reactive object with initial value equal to a', () => {
 })
 
 test('Reactive::unwatch', () => {
-  const value = new Reactive(0)
-  const { watcherID, reactive: squaredValue } = value.watch(value => value * value)
+  const value = Reactive.from(0)
+  const squaredValue = value.watch(value => value * value)
   expect(squaredValue.value).toBe(0)
   value.value = 3
   expect(squaredValue.value).toBe(9)
-  value.unwatch(watcherID)
+  value.unwatch(squaredValue)
   value.value = 4
   expect(squaredValue.value).toBe(9)
 })

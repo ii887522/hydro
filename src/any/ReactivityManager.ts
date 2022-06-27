@@ -3,39 +3,40 @@
 import Reactive from './Reactive.js'
 
 /**
- * It is a manager that allows users to register watchers more conveniently and unwatch all registered watchers at once.
+ * A manager that allows users to register watchers more conveniently and unwatch all registered watchers at once.
  */
 export default class ReactivityManager {
   private readonly reactives: { [reactiveID: number]: Reactive<unknown> } = { }
-  private readonly watcherIDs: { [reactiveID: number]: number[] } = { }
+  private readonly watcherReactives: { [reactiveID: number]: Array<Reactive<unknown>> } = { }
 
   /**
-   * It registers a new watcher that transforms the reactive object received into a new reactive object that holds a
+   * Registers a new watcher that transforms the reactive object received into a new reactive object that holds a
    * different type.
    *
    * @param reactive The reactive object which its value changes are listened for.
-   * @param onChange It is a watcher that listens for new value and processes it.
+   * @param onChange A watcher that listens for new value and processes it.
    * @returns A transformed reactive object.
    */
   watch<A, R> (reactive: Reactive<A>, onChange: (value: A) => R): Reactive<R> {
     this.reactives[reactive.id] = reactive as Reactive<unknown>
     const result = reactive.watch(onChange)
-    if (this.watcherIDs[reactive.id] === undefined) this.watcherIDs[reactive.id] = [result.watcherID]
-    else this.watcherIDs[reactive.id]?.push(result.watcherID)
-    return result.reactive
+    if (this.watcherReactives[reactive.id] === undefined) {
+      this.watcherReactives[reactive.id] = [result as Reactive<unknown>]
+    } else this.watcherReactives[reactive.id]?.push(result as Reactive<unknown>)
+    return result
   }
 
   /**
-   * It registers a new watcher that transforms these reactive objects received into a new reactive object that holds a
+   * Registers a new watcher that transforms these reactive objects received into a new reactive object that holds a
    * different type.
    *
    * @param reactiveA The first reactive object which its value changes are listened for.
    * @param reactiveB The second reactive object which its value changes are listened for.
-   * @param onChange It is a watcher that listens for new value and processes it.
+   * @param onChange A watcher that listens for new value and processes it.
    * @returns A transformed reactive object.
    */
   watch2<A, B, R> (reactiveA: Reactive<A>, reactiveB: Reactive<B>, onChange: (a: A, b: B) => R): Reactive<R> {
-    const result = new Reactive(onChange(reactiveA.value, reactiveB.value))
+    const result = Reactive.from(onChange(reactiveA.value, reactiveB.value))
     this.watch(reactiveA, value => {
       result.value = onChange(value, reactiveB.value)
     })
@@ -46,19 +47,19 @@ export default class ReactivityManager {
   }
 
   /**
-   * It registers a new watcher that transforms these reactive objects received into a new reactive object that holds a
+   * Registers a new watcher that transforms these reactive objects received into a new reactive object that holds a
    * different type.
    *
    * @param reactiveA The first reactive object which its value changes are listened for.
    * @param reactiveB The second reactive object which its value changes are listened for.
    * @param reactiveC The third reactive object which its value changes are listened for.
-   * @param onChange It is a watcher that listens for new value and processes it.
+   * @param onChange A watcher that listens for new value and processes it.
    * @returns A transformed reactive object.
    */
   watch3<A, B, C, R> (
     reactiveA: Reactive<A>, reactiveB: Reactive<B>, reactiveC: Reactive<C>, onChange: (a: A, b: B, c: C) => R
   ): Reactive<R> {
-    const result = new Reactive(onChange(reactiveA.value, reactiveB.value, reactiveC.value))
+    const result = Reactive.from(onChange(reactiveA.value, reactiveB.value, reactiveC.value))
     this.watch(reactiveA, value => {
       result.value = onChange(value, reactiveB.value, reactiveC.value)
     })
@@ -72,13 +73,13 @@ export default class ReactivityManager {
   }
 
   /**
-   * It detaches all watchers registered through this manager.
+   * Detaches all watchers registered through this manager.
    */
   freeWatchers (): void {
-    for (const reactiveID of Object.keys(this.watcherIDs)) {
-      const watcherIDs = this.watcherIDs[Number(reactiveID)]
-      if (watcherIDs === undefined) continue
-      for (const watcherID of watcherIDs) this.reactives[Number(reactiveID)]?.unwatch(watcherID)
+    for (const reactiveID of Object.keys(this.watcherReactives)) {
+      const watcherReactives = this.watcherReactives[Number(reactiveID)]
+      if (watcherReactives === undefined) continue
+      for (const watcherReactive of watcherReactives) this.reactives[Number(reactiveID)]?.unwatch(watcherReactive)
     }
   }
 }
