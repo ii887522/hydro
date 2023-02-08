@@ -2,9 +2,9 @@
 Defines a sequence between two values.
 
 ## Table of contents
-- [normalize](https://github.com/ii887522/hydro/blob/master/docs/struct/Sequence.md#normalize)
-- [unnormalize](https://github.com/ii887522/hydro/blob/master/docs/struct/Sequence.md#unnormalize)
-- [toBound](https://github.com/ii887522/hydro/blob/master/docs/struct/Sequence.md#toBound)
+- [normalize](https://github.com/ii887522/hydro/blob/master/docs/struct/Seq.md#normalize)
+- [unnormalize](https://github.com/ii887522/hydro/blob/master/docs/struct/Seq.md#unnormalize)
+- [toBound](https://github.com/ii887522/hydro/blob/master/docs/struct/Seq.md#toBound)
 
 ## **normalize**
 ```ts

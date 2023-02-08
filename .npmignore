@@ -2,9 +2,14 @@
 .vscode
 coverage
 docs
+*.js.map
 test
+types
 .editorconfig
+.*.json
+.eslintignore
 .gitignore
+.prettierignore
 *.config.*js
 CODE_OF_CONDUCT.md
 tsconfig.*

@@ -1,7 +1,7 @@
-coverage
-node_modules
+package-lock.json
 types
 src/**/*.js
 test/**/*.js
 index.js
+CODE_OF_CONDUCT.md
 *.tsbuildinfo
